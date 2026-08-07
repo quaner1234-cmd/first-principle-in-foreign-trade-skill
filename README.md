@@ -108,10 +108,8 @@ Final FOB price and delivery time
 ### Clone
 
 ```bash
-git clone https://github.com/<username>/first-principle-in-foreign-trade-skill.git
+git clone https://github.com/quaner1234-cmd/first-principle-in-foreign-trade-skill.git
 ```
-
-> 将 `<username>` 换成你的 GitHub 用户名。正式 push 后此处会更新为真实地址。
 
 ### Claude Code / compatible Agent Skills
 
