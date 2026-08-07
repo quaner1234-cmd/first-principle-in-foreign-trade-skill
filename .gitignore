@@ -1,0 +1,32 @@
+# Git ignore — keep private company data and secrets out of the public repo
+
+# Private company context (never commit)
+company-context.local.md
+*.local.md
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local packing / release notes (not part of the skill)
+指令.md
+RELEASE-NOTES.local.md
+
+# Caches / temp
+__pycache__/
+*.log
+tmp/
+.temp/
+node_modules/
