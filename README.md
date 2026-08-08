@@ -19,8 +19,9 @@ Skill 内部名称：`trade-judgment`
 
 ## What it does
 
-- 新询盘分析
-- 客户背调
+- 项目阶段自动识别（New Lead / Qualified Inquiry / Active Project / Re-engagement）
+- 询盘与资格澄清分析
+- 客户身份证据不足时的公开背调（只建事实，不打分）
 - 报价准备
 - 技术包检查
 - 样品反馈
@@ -39,9 +40,17 @@ Skill 内部名称：`trade-judgment`
 ```text
 Raw input
 ↓
-Fact / Inference / Unknown
+Identify customer / project + existing context
+↓
+Project stage (New Lead / Qualified Inquiry / Active Project / Re-engagement)
+↓
+Buyer identity evidence sufficient?
+  → no: public background check (facts only)
+  → yes: reuse / skip full re-check
 ↓
 Company Context
+↓
+Fact / Inference / Unknown
 ↓
 Biggest blocker
 ↓
@@ -53,6 +62,9 @@ Commitment boundary
 ↓
 Customer reply if requested
 ```
+
+Skill 会自动判断项目阶段，**不要**让用户先选「新询盘还是老询盘」。  
+背调看的是**身份证据是否充分**，不是「是不是第一封邮件」。
 
 ---
 
