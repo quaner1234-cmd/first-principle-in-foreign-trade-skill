@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0
+
+- Added Clarity Engine (`references/clarity-engine.md`): Clarity before closure; Unknown ≠ Blocker; promise boundary ≠ exploration boundary
+- Unknown classification (A public research / B customer / C internal / D test / E Hard Stop) with solve-path before waiting
+- Conversation momentum (Positive / Weak / Negative); default to progressive clarification while buyer engages
+- Replaced “biggest blocker first” bias with **current key uncertainty** + Hard Blocker check + parallel advance tracks
+- Research may diverge; judgment must converge; customer communication keeps only next-step information
+- Method transfers across projects; answers do not; working hypotheses can be overturned by reality / review
+- Mode 10 review cards can record method corrections into patterns
+- Updated SKILL, decision engine, output contract, Mode 1, cheatsheet, golden examples
+
 ## 0.2.0
 
 - Added project-stage detection (New Lead / Qualified Inquiry / Active Project / Re-engagement) before mode routing

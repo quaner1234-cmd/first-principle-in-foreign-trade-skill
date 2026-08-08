@@ -10,6 +10,8 @@
 
 本文件是决策引擎**前置层**：先识别客户/项目与阶段，再决定 Mode、背调策略与提问。用户无需先选手动模式。
 
+目标函数与未知处理见 `clarity-engine.md`（Clarity before closure；阶段识别之后仍须看对话动量与未知分类）。
+
 ## 四档阶段（主路由）
 
 | 阶段 | 典型状态 | 背调侧重 |
@@ -65,7 +67,7 @@
 
 ### 第四层：不确定时不要猜
 
-例：用户只贴 `Hi Alex, yes, please make two samples.`  
+例：用户只贴 `Hi, yes, please make two samples.`  
 Skill 知道这不是第一封，但不知道前序做到哪一步。
 
 输出：

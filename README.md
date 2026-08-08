@@ -10,7 +10,7 @@ You make the final judgment.
 
 这是《让客户敢下单》配套的 **可执行工作工具**，不是书的全文电子版。
 
-把真实询盘、客户邮件、报价问题、技术包、样品反馈或供应商问题丢进来，Skill 会按统一判断框架告诉你：**现在最值得做什么、找谁验证、什么可以承诺。**
+把真实询盘、客户邮件、报价问题、技术包、样品反馈或供应商问题丢进来，Skill 会按统一判断框架告诉你：**现在最值得做什么来推进清晰度、找谁验证、什么可以承诺、何时才该停止。**
 
 Skill 内部名称：`trade-judgment`  
 仓库名称：`first-principle-in-foreign-trade-skill`
@@ -19,17 +19,13 @@ Skill 内部名称：`trade-judgment`
 
 ## What it does
 
+- Clarity before closure：把不确定转化为可行动清晰度（不是尽快关单）
 - 项目阶段自动识别（New Lead / Qualified Inquiry / Active Project / Re-engagement）
-- 询盘与资格澄清分析
+- 对话动量 + 未知五类（公开研究 / 客户 / 内部 / 测试 / Hard Stop）
 - 客户身份证据不足时的公开背调（只建事实，不打分）
-- 报价准备
-- 技术包检查
-- 样品反馈
-- 客户跟进与沉默判断
-- 供应商可靠性
-- 谈判和拒绝
-- 战略客户内部升级
-- 项目复盘归档
+- 研究可发散、判断须收敛、客户沟通只保留推动下一步的信息
+- 跨项目迁移**方法**而非答案；工作假设可被现实推翻
+- 询盘澄清、报价、技术包、样品、跟进、供应商、谈判、升级、复盘
 
 默认是 **Action Mode**（告诉你现在做什么），不是读书模式。
 
@@ -42,29 +38,30 @@ Raw input
 ↓
 Identify customer / project + existing context
 ↓
-Project stage (New Lead / Qualified Inquiry / Active Project / Re-engagement)
+Project stage + conversation momentum
 ↓
 Buyer identity evidence sufficient?
   → no: public background check (facts only)
   → yes: reuse / skip full re-check
 ↓
-Company Context
+Company Context (promise boundary ≠ exploration boundary)
 ↓
-Fact / Inference / Unknown
+Fact / Inference / Unknown (classify A–E)
 ↓
-Biggest blocker
+Current key uncertainty (Hard Blocker?)
 ↓
-Next smallest effective action
+What you can clarify now + parallel tracks
 ↓
-Reality verification
+Smallest effective advance (cost × info × momentum)
 ↓
-Commitment boundary
+Commitment boundary + stop conditions
 ↓
-Customer reply if requested
+Customer reply if requested (compressed)
 ```
 
 Skill 会自动判断项目阶段，**不要**让用户先选「新询盘还是老询盘」。  
-背调看的是**身份证据是否充分**，不是「是不是第一封邮件」。
+背调看的是**身份证据是否充分**，不是「是不是第一封邮件」。  
+**Unknown ≠ Blocker.** 承诺边界 ≠ 探索边界。研究可深，对客户沟通须压缩。
 
 ---
 
