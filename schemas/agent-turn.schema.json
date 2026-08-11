@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent-turn.schema.json",
+  "title": "Trade Judgment Agent Turn",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "tool_requests", "decision"],
+  "properties": {
+    "status": {"type": "string", "enum": ["needs_tools", "final"]},
+    "tool_requests": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/tool_request"},
+      "maxItems": 8
+    },
+    "decision": {
+      "anyOf": [
+        {"$ref": "#/$defs/decision"},
+        {"type": "null"}
+      ]
+    }
+  },
+  "$defs": {
+    "tool_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["call_id", "tool_name", "arguments", "reason"],
+      "properties": {
+        "call_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"},
+        "tool_name": {
+          "type": "string",
+          "enum": [
+            "read_project_file",
+            "search_project_files",
+            "write_runtime_note",
+            "public_research",
+            "internal_verification",
+            "supplier_inquiry",
+            "technical_test",
+            "send_external_message"
+          ]
+        },
+        "arguments": {"type": "object"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "source_type", "source_ref", "observed_at", "expires_at", "sensitivity"],
+      "properties": {
+        "claim": {"type": "string", "minLength": 1},
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "user_input",
+            "company_context",
+            "project_material",
+            "conversation_context",
+            "public_source",
+            "tool_result",
+            "technical_pack",
+            "internal_confirmation"
+          ]
+        },
+        "source_ref": {"type": "string", "minLength": 1},
+        "observed_at": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+        "expires_at": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+        "sensitivity": {"type": "string", "enum": ["public", "internal", "confidential"]}
+      }
+    },
+    "inference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "basis_source_refs", "verification_status"],
+      "properties": {
+        "claim": {"type": "string", "minLength": 1},
+        "basis_source_refs": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "maxItems": 8
+        },
+        "verification_status": {"type": "string", "enum": ["candidate", "needs_verification"]}
+      }
+    },
+    "unknown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "resolution_path",
+        "blocker_status",
+        "owner",
+        "low_cost_path",
+        "decision_impact"
+      ],
+      "properties": {
+        "description": {"type": "string", "minLength": 1},
+        "resolution_path": {
+          "type": "string",
+          "enum": ["public_research", "customer", "internal", "testing", "no_path"]
+        },
+        "blocker_status": {
+          "type": "string",
+          "enum": ["non_blocking", "soft_blocking", "hard_blocking"]
+        },
+        "owner": {"type": "string", "minLength": 1},
+        "low_cost_path": {"type": "boolean"},
+        "decision_impact": {"type": "string", "minLength": 1}
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "owner", "risk", "approval_required", "idempotency_key"],
+      "properties": {
+        "description": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "risk": {"type": "string", "enum": ["read", "draft", "write", "external"]},
+        "approval_required": {"type": "boolean"},
+        "idempotency_key": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]}
+      }
+    },
+    "commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "source_refs"],
+      "properties": {
+        "claim": {"type": "string", "minLength": 1},
+        "source_refs": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "maxItems": 8
+        }
+      }
+    },
+    "customer_reply": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "body", "questions", "requires_approval"],
+      "properties": {
+        "language": {"type": "string", "minLength": 1},
+        "body": {"type": "string", "minLength": 1},
+        "questions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "maxItems": 3
+        },
+        "requires_approval": {"type": "boolean", "const": true}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "project_stage",
+        "stage_basis",
+        "momentum",
+        "momentum_basis",
+        "primary_mode",
+        "disposition",
+        "facts",
+        "inferences",
+        "unknowns",
+        "proactive_clarifications",
+        "next_actions",
+        "parallel_actions",
+        "can_say",
+        "cannot_promise",
+        "stop_conditions",
+        "customer_reply"
+      ],
+      "properties": {
+        "summary": {"type": "string", "minLength": 1},
+        "project_stage": {
+          "type": "string",
+          "enum": ["new_lead", "qualified_inquiry", "active_project", "re_engagement", "unknown"]
+        },
+        "stage_basis": {"type": "string", "minLength": 1},
+        "momentum": {"type": "string", "enum": ["positive", "weak", "negative", "unknown"]},
+        "momentum_basis": {"type": "string", "minLength": 1},
+        "primary_mode": {"type": "integer", "minimum": 1, "maximum": 10},
+        "disposition": {
+          "type": "string",
+          "enum": ["progress", "wait", "escalate", "reduce_investment", "stop", "need_context"]
+        },
+        "facts": {"type": "array", "items": {"$ref": "#/$defs/fact"}, "maxItems": 30},
+        "inferences": {"type": "array", "items": {"$ref": "#/$defs/inference"}, "maxItems": 20},
+        "unknowns": {"type": "array", "items": {"$ref": "#/$defs/unknown"}, "maxItems": 20},
+        "proactive_clarifications": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "maxItems": 10
+        },
+        "next_actions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/action"},
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "parallel_actions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/action"},
+          "maxItems": 6
+        },
+        "can_say": {"type": "array", "items": {"$ref": "#/$defs/commitment"}, "maxItems": 10},
+        "cannot_promise": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "maxItems": 10
+        },
+        "stop_conditions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "maxItems": 10
+        },
+        "customer_reply": {
+          "anyOf": [
+            {"$ref": "#/$defs/customer_reply"},
+            {"type": "null"}
+          ]
+        }
+      }
+    }
+  }
+}

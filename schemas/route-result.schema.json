@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "route-result.schema.json",
+  "title": "Trade Judgment Routing Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_stage",
+    "stage_basis",
+    "momentum",
+    "momentum_basis",
+    "primary_mode",
+    "secondary_modes",
+    "buyer_identity_evidence",
+    "due_diligence_strategy",
+    "requires_context_question",
+    "context_question"
+  ],
+  "properties": {
+    "project_stage": {
+      "type": "string",
+      "enum": ["new_lead", "qualified_inquiry", "active_project", "re_engagement", "unknown"]
+    },
+    "stage_basis": {"type": "string", "minLength": 1},
+    "momentum": {
+      "type": "string",
+      "enum": ["positive", "weak", "negative", "unknown"]
+    },
+    "momentum_basis": {"type": "string", "minLength": 1},
+    "primary_mode": {"type": "integer", "minimum": 1, "maximum": 10},
+    "secondary_modes": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 1, "maximum": 10},
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "buyer_identity_evidence": {
+      "type": "string",
+      "enum": ["sufficient", "insufficient", "unknown"]
+    },
+    "due_diligence_strategy": {
+      "type": "string",
+      "enum": ["none", "quick", "deep", "incremental", "unable"]
+    },
+    "requires_context_question": {"type": "boolean"},
+    "context_question": {
+      "anyOf": [
+        {"type": "string", "minLength": 1},
+        {"type": "null"}
+      ]
+    }
+  }
+}

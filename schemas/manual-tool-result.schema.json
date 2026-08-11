@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manual-tool-result.schema.json",
+  "title": "Manual Tool Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summary", "facts", "not_found", "attachments"],
+  "properties": {
+    "summary": {"type": "string", "minLength": 1},
+    "facts": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "source_ref", "observed_at", "sensitivity"],
+        "properties": {
+          "claim": {"type": "string", "minLength": 1},
+          "source_ref": {"type": "string", "minLength": 1},
+          "observed_at": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+          "sensitivity": {"type": "string", "enum": ["public", "internal", "confidential"]}
+        }
+      }
+    },
+    "not_found": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "maxItems": 20
+    },
+    "attachments": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "maxItems": 20
+    }
+  }
+}

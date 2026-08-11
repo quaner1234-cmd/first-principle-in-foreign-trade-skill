@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "runtime_dir": ".trade-harness",
+  "policy_root": ".",
+  "company_context": "company-context.local.md",
+  "provider": {
+    "type": "openai_compatible",
+    "base_url": "https://api.openai.com/v1",
+    "endpoint": "/chat/completions",
+    "model": "",
+    "model_env": "TRADE_HARNESS_MODEL",
+    "api_key_env": "OPENAI_API_KEY",
+    "timeout_seconds": 120,
+    "retries": 2,
+    "strict_json_schema": true
+  },
+  "limits": {
+    "max_turns": 6,
+    "validation_retries": 2,
+    "max_input_chars": 120000,
+    "max_tool_output_chars": 30000,
+    "max_file_bytes": 1000000,
+    "max_search_results": 50
+  },
+  "permissions": {
+    "read_project_file": "allow",
+    "search_project_files": "allow",
+    "write_runtime_note": "approval",
+    "public_research": "manual",
+    "internal_verification": "manual",
+    "supplier_inquiry": "manual",
+    "technical_test": "manual",
+    "send_external_message": "deny"
+  }
+}

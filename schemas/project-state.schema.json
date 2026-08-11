@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project-state.schema.json",
+  "title": "Trade Judgment Project State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "title",
+    "customer_ref",
+    "stage",
+    "momentum",
+    "facts",
+    "inferences",
+    "unknowns",
+    "commitments",
+    "pending_actions",
+    "decision_history",
+    "last_run_id",
+    "policy_version",
+    "revision",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "project_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"},
+    "title": {"type": "string", "minLength": 1},
+    "customer_ref": {"type": "string"},
+    "stage": {
+      "type": "string",
+      "enum": ["new_lead", "qualified_inquiry", "active_project", "re_engagement", "unknown"]
+    },
+    "momentum": {"type": "string", "enum": ["positive", "weak", "negative", "unknown"]},
+    "facts": {"type": "array", "items": {"type": "object"}},
+    "inferences": {"type": "array", "items": {"type": "object"}},
+    "unknowns": {"type": "array", "items": {"type": "object"}},
+    "commitments": {"type": "array", "items": {"type": "object"}},
+    "pending_actions": {"type": "array", "items": {"type": "object"}},
+    "decision_history": {"type": "array", "items": {"type": "string"}},
+    "last_run_id": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+    "policy_version": {"type": "string", "minLength": 1},
+    "revision": {"type": "integer", "minimum": 0},
+    "created_at": {"type": "string", "minLength": 1},
+    "updated_at": {"type": "string", "minLength": 1}
+  }
+}

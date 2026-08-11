@@ -15,16 +15,20 @@ You make the final judgment.
 Skill 内部名称：`trade-judgment`  
 仓库名称：`first-principle-in-foreign-trade-skill`
 
+从 `1.3.1` 起，Skill 内容对齐 ChatGPT Project Edition 1.3.1（Progressive Specification、责任边界内严外松、Reply Gate、Natural Customer Communication 等）。仓库另含 Runtime Harness：原 Skill 作为领域决策 Policy，Python Runtime 负责状态、Schema、工具权限、审批、恢复、审计与回归测试。完整说明见 [`RUNTIME.md`](RUNTIME.md)。
+
 ---
 
 ## What it does
 
 - Clarity before closure：把不确定转化为可行动清晰度（不是尽快关单）
-- 项目阶段自动识别（New Lead / Qualified Inquiry / Active Project / Re-engagement）
-- 对话动量 + 未知五类（公开研究 / 客户 / 内部 / 测试 / Hard Stop）
+- Progressive Specification：Unknown → Reference → Working Assumption → Verified Input → Final Spec
+- Reference ≠ Specification；Tool-before-Question；Decision Ownership ≠ Information Generation
+- 项目阶段自动识别 + 对话动量 + 未知解决路径 + 独立 Blocker 状态
+- 责任边界（Can Do / Assist / Coordinate）内部严谨、对外自然（不默认免责声明堆叠）
+- Reply Gate：仅在用户明确要求时生成客户话术
+- Execution Friction：减少不必要交易节点，但不提前承诺未知
 - 客户身份证据不足时的公开背调（只建事实，不打分）
-- 研究可发散、判断须收敛、客户沟通只保留推动下一步的信息
-- 跨项目迁移**方法**而非答案；工作假设可被现实推翻
 - 询盘澄清、报价、技术包、样品、跟进、供应商、谈判、升级、复盘
 
 默认是 **Action Mode**（告诉你现在做什么），不是读书模式。
@@ -40,28 +44,23 @@ Identify customer / project + existing context
 ↓
 Project stage + conversation momentum
 ↓
-Buyer identity evidence sufficient?
-  → no: public background check (facts only)
-  → yes: reuse / skip full re-check
+Buyer identity evidence / Company Context
 ↓
-Company Context (promise boundary ≠ exploration boundary)
+Fact / Inference / Unknown
 ↓
-Fact / Inference / Unknown (classify A–E)
+Tool-before-Question → Progressive Specification
 ↓
 Current key uncertainty (Hard Blocker?)
 ↓
-What you can clarify now + parallel tracks
+Smallest effective advance + parallel tracks
 ↓
-Smallest effective advance (cost × info × momentum)
+Commitment + responsibility + execution-friction checks
 ↓
-Commitment boundary + stop conditions
-↓
-Customer reply if requested (compressed)
+Customer reply only if requested (Reply Gate)
 ```
 
 Skill 会自动判断项目阶段，**不要**让用户先选「新询盘还是老询盘」。  
-背调看的是**身份证据是否充分**，不是「是不是第一封邮件」。  
-**Unknown ≠ Blocker.** 承诺边界 ≠ 探索边界。研究可深，对客户沟通须压缩。
+**Unknown ≠ Blocker.** **Reference ≠ Specification.** 内部严谨，对外自然。
 
 ---
 
@@ -86,8 +85,9 @@ Facts:
 - Reference photos provided
 - Fabric specification unknown
 
-Biggest blocker:
-Product specification is not sufficient for reliable costing.
+Current key uncertainty:
+The fabric specification affects reliable costing.
+Resolution path: customer clarification. Blocker status: soft blocking, not Hard Stop.
 
 Next action:
 Ask only the 2 variables that will materially change price.
@@ -104,6 +104,18 @@ Final FOB price and delivery time
 ---
 
 ## Installation / Use
+
+### Runtime Harness（推荐用于长期真实项目）
+
+```bash
+python3 -m trade_judgment_harness init
+python3 -m trade_judgment_harness doctor
+python3 -m trade_judgment_harness run --project demo-001 --input inquiry.txt
+```
+
+Runtime 需要配置一个 OpenAI-compatible API，或通过 command adapter 接入其他模型。它默认禁止自动发送外部消息。初始化、配置、暂停恢复和审批操作见 [`RUNTIME.md`](RUNTIME.md)。
+
+如果只想在 Claude Code、Codex 或兼容 Agent Skills 的宿主中手动使用判断框架，可继续按下面的纯 Skill 方式安装。
 
 ### Download ZIP
 
@@ -214,6 +226,9 @@ references/                   # 判断内核、输出契约、各 Mode
 chapters/                     # 按需加载的方法论压缩材料
 examples/                     # 脱敏输入→输出案例
 patterns.md / cheatsheet.md / glossary.md
+trade_judgment_harness/       # durable runtime / policy enforcement
+schemas/                      # machine-readable input/output/state contracts
+tests/                        # runtime and policy invariant regression tests
 ```
 
 ---

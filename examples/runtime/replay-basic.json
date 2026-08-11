@@ -1,0 +1,90 @@
+{
+  "route": {
+    "project_stage": "qualified_inquiry",
+    "stage_basis": "The buyer supplied a product, quantity and quotation request.",
+    "momentum": "positive",
+    "momentum_basis": "Reference photos and a concrete quantity were supplied.",
+    "primary_mode": 4,
+    "secondary_modes": [1],
+    "buyer_identity_evidence": "insufficient",
+    "due_diligence_strategy": "unable",
+    "requires_context_question": false,
+    "context_question": null
+  },
+  "turns": [
+    {
+      "status": "final",
+      "tool_requests": [],
+      "decision": {
+        "summary": "先澄清真正影响核价的面料变量，再给正式 FOB 报价；客户信息具体，项目应继续推进。",
+        "project_stage": "qualified_inquiry",
+        "stage_basis": "客户给出了产品、500 件数量和报价请求。",
+        "momentum": "positive",
+        "momentum_basis": "客户已发送参考图并给出具体数量。",
+        "primary_mode": 4,
+        "disposition": "progress",
+        "facts": [
+          {
+            "claim": "客户计划采购 500 件夹克。",
+            "source_type": "user_input",
+            "source_ref": "input:current",
+            "observed_at": null,
+            "expires_at": null,
+            "sensitivity": "internal"
+          },
+          {
+            "claim": "客户发送了参考图并要求 FOB 报价，但没有给面料规格。",
+            "source_type": "user_input",
+            "source_ref": "input:current",
+            "observed_at": null,
+            "expires_at": null,
+            "sensitivity": "internal"
+          }
+        ],
+        "inferences": [
+          {
+            "claim": "项目已经具备资格询盘特征，但尚未达到可靠核价条件。",
+            "basis_source_refs": ["input:current"],
+            "verification_status": "candidate"
+          }
+        ],
+        "unknowns": [
+          {
+            "description": "决定价格的面料成分、克重和功能要求",
+            "resolution_path": "customer",
+            "blocker_status": "soft_blocking",
+            "owner": "Customer",
+            "low_cost_path": true,
+            "decision_impact": "决定材料成本、工艺和正式 FOB 价格"
+          }
+        ],
+        "proactive_clarifications": [
+          "内部先确认参考图对应结构是否有现成相似版型。",
+          "向客户集中确认面料成分、克重和功能要求。"
+        ],
+        "next_actions": [
+          {
+            "description": "基于参考图整理一个面料变量确认清单，并向客户集中确认。",
+            "owner": "Sales",
+            "risk": "draft",
+            "approval_required": false,
+            "idempotency_key": null
+          }
+        ],
+        "parallel_actions": [
+          {
+            "description": "内部初查相似版型和可用面料方向。",
+            "owner": "Internal",
+            "risk": "read",
+            "approval_required": false,
+            "idempotency_key": null
+          }
+        ],
+        "can_say": [],
+        "cannot_promise": ["正式 FOB 单价", "最终交期", "具体面料性能"],
+        "stop_conditions": ["客户长期拒绝提供任何影响核价的规格，且不愿接受样品或估算验证路径。"],
+        "customer_reply": null
+      }
+    }
+  ]
+}

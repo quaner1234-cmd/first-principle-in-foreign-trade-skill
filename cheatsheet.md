@@ -1,55 +1,54 @@
 # 速查卡：决策表
 
+对齐 Project Edition **1.3.1**
+
 ## 场景 → 动作
 
 | 场景 | 动作 |
 |---|---|
-| 收到询盘/客户材料 | 阶段 + 动量 → 身份不足才背调 → 未知五类 → 关键未知（≠阻塞）→ 先公开/内部澄清 → 最小有效推进 + 并行项；Clarity before closure |
-| 客户持续互动提问 | Positive Momentum → 默认继续定义项目，禁止主动关闭；承诺边界≠探索边界 |
-| 可公开研究的未知 | 有网先查，不要扔回客户 |
-| 客户不回复 | 先排无恶意原因；Weak 可短等仍可并行；Negative 才降投入 |
-| 客户要报价 | 关键变量是否已知？已知→直接报；未知→先澄清或先做 A/C 研究 |
-| 客户压价 | 拆结构（贵在哪/改哪些能降），不急着降价 |
-| 客户要求做不到的事 | 诚实划清**承诺**边界 + 给探索/替代路径 + 留机会；勿把整单掐死 |
-| 供应商说"做不到" | 拆到底层 + 第三方验证，不直接接受也不直接换 |
-| 供应商承诺了做不到 | 换人/升级到上级 |
-| 报价高过目标价 | 止损三问：百分比差距？能被数量消化？能被方案优化？ |
-| 客户反馈模糊（"太透了"） | 翻译链：客户语言→技术选项→客户确认 |
-| AI 给结论 | 五步：定义→原始材料→区分三类→找矛盾→现实验证 |
-| 自己卡住了 | 求助、先交一部分、把承诺写下来 |
-| 项目结束 | 写案例卡；若方法被现实推翻，写明哪条假设失效（可修正 Skill 惯性） |
-| 深度研究后要回客户 | 内部可长；对外只留推动下一步的 1–3 问/短框架——研究发散、判断收敛、沟通压缩 |
+| 收到询盘/客户材料 | 阶段 + 动量 → 身份不足才背调 → Tool-before-Question → Progressive Spec → 最小有效推进 |
+| 客户持续互动 | Positive → 渐进澄清 + 并行；禁止主动关闭 |
+| 可公开研究的未知 | 有网先查；先给 Reference/Range/Options，再决定是否问客户 |
+| Final Spec 暂不可得 | 不等于不能推进；Public Reference → Working Assumption → Verified Input |
+| 安全/认证相关变量 | Reference 仍可用于研究与筛选；不可直接当执行规格 |
+| 客户不回复 | Weak 可短等仍可并行；Negative 才降投入；≠ 自动停止 |
+| 客户要报价 | 关键变量是否足够？不足→澄清或先 Reference；估算价写清假设 |
+| 要回客户 | Reply Gate：仅用户明确要求才写；内部严谨，对外自然 |
+| 复杂责任项目 | 内部分 Can Do/Assist/Coordinate/Cannot；对外不机械四层声明 |
+| 付款/PI/多节点 | Execution Friction：可安全合并则合并；不因减节点虚构费用 |
+| 供应商说做不到 | Original Observation → Candidate Explanation → Evidence → Verification |
+| 项目结束 | 案例卡；方法被推翻则写明修正 |
 
 ## 判断权重
 
 **项目行为证据与对话动量 > 需求完整度 > 商业可行性 > 主体背景 > 表面语言**
 
-## 三层压缩
+## 六原则
 
-研究（可深）→ 判断（收敛）→ 客户沟通（只留下一步必需信息）
+Unknown≠Blocker｜承诺≠探索｜研究发散/判断收敛/沟通压缩｜协助≠责任｜Reference≠Specification｜Decision Ownership≠Information Generation
+
+## Progressive Specification
+
+`Unknown → Public Reference → Candidate Range → Working Assumption → Verified Input → Final Specification`
+
+Development prototype 可早于 Final Spec；正式验证样/PP/量产需要更高 Verified Input。
 
 ## 未知五秒分类
 
-A 公开研究 → 先查｜B 客户 → 问 1–3｜C 内部 → 核实｜D 测试 → 计划｜E Hard Stop → 才可停
+A 公开先查｜B 客户问 1–3｜C 内部核实｜D 测试计划｜No Path → 再判 Hard Blocker；Hard Stop 才可停
 
 ## 禁止事项
 
-- ❌ 把推断当事实；Unknown 一律当 Blocker；过早关闭
-- ❌ "成交概率 73%"式虚假精确评分
-- ❌ 把 Gmail/无网站/新公司当负面证据
-- ❌ 虚构库存、产能、证书、已验证供应商
-- ❌ 把 AI 的假设当结论；口头报价当承诺
-- ❌ 为进大客户的门承诺做不到的价格
-- ❌ 让 AI 先表态（它迎合你）
-- ❌ 承诺边界当成探索边界
-- ❌ 对客户倾倒研究报告；跨项目机械复制答案
-- ❌ 把旧工作假设当成不可推翻
+- ❌ Unknown 一律当 Blocker；过早关闭；Positive 下找结案理由  
+- ❌ Reference 包装成 Final；因怕担责拒绝提供任何非最终参考  
+- ❌ 普通回复堆叠免责声明；内部责任模型整段外显  
+- ❌ 为减节点虚构费用；跨项目机械复制答案  
+- ❌ 精确成交概率；虚构能力/认证/供应商  
 
 ## 必须做的
 
-- ✅ 事实/推断/未知三列 + 未知分类
-- ✅ 当前关键未知（是否 Hard Blocker）+ 解决路径
-- ✅ 主动可澄清项 + 并行推进项
-- ✅ 报价标注假设条件；停止条件写清
-- ✅ Clarity before closure；方法迁移、答案不迁移
-- ✅ 工作假设可被现实推翻
+- ✅ Clarity before closure；Tool-before-Question  
+- ✅ 当前关键未知 + 解决路径 + Blocker 状态分开  
+- ✅ 主动可澄清项 + 并行推进 + 最小有效推进  
+- ✅ Reply Gate；Natural Customer Communication  
+- ✅ 工作假设可被现实推翻  
