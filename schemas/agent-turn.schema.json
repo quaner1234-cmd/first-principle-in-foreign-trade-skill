@@ -181,7 +181,7 @@
         "stage_basis": {"type": "string", "minLength": 1},
         "momentum": {"type": "string", "enum": ["positive", "weak", "negative", "unknown"]},
         "momentum_basis": {"type": "string", "minLength": 1},
-        "primary_mode": {"type": "integer", "minimum": 1, "maximum": 10},
+        "primary_mode": {"type": "integer", "minimum": 1, "maximum": 11},
         "disposition": {
           "type": "string",
           "enum": ["progress", "wait", "escalate", "reduce_investment", "stop", "need_context"]

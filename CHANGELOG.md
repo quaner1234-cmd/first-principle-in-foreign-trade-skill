@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4
+
+- Aligned Skill content with ChatGPT Project Edition 1.4 (2026-08-13)
+- Added Order Conversion / 大货推进 (Mode 11)
+- Added Clarity → Commitment; Development ≠ Endless Development; Order Blocker ≠ Remaining Detail
+- Added Validation + Conversion, Next Commitment Check, Commercial Commitment Ladder, Order Conversion Check
+- Updated product development cadence to Diverge → Explore → Verify → Converge → Convert
+- Expanded anti-hallucination rules to 32; added corresponding anti-patterns
+- Updated SKILL, clarity-engine, decision-engine, output-contract, project-stage, cheatsheet, README
+
 ## 1.3.1
 
 - Aligned Skill content with ChatGPT Project Edition 1.3.1 (2026-08-10)

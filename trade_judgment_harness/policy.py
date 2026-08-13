@@ -15,6 +15,7 @@ MODE_FILES = {
     8: "references/mode-negotiation.md",
     9: "references/mode-internal-escalation.md",
     10: "references/mode-review.md",
+    11: "references/mode-order-conversion.md",
 }
 
 ROUTING_FILES = (

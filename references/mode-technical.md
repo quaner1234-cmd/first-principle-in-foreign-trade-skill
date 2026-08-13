@@ -53,6 +53,8 @@ Unknown → Public Reference → Candidate Range → Working Assumption → Veri
 
 见 `references/clarity-engine.md`。
 
+关键测试通过或技术可行性基本确认后，运行 **Order Conversion Check**（见 `mode-order-conversion.md`）。
+
 ## 供应链执行检查点
 
 按独立状态跟踪：

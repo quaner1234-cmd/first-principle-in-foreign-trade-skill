@@ -32,6 +32,8 @@
 - 现在可以说：基于当前事实可明确的
 - 暂时不能承诺：价格/交期/认证/特殊工艺/库存/测试结果——除非内部已确认
 
+正式报价已经具备可信基础后，运行 **Order Conversion Check**（见 `mode-order-conversion.md`）：价格可信不等于自动继续无限开发；检查当前合理的 Next Customer Commitment。
+
 ## 知识层
 
 需要时加载：`chapters/ch06-报价.md`、`references/mode-technical.md`

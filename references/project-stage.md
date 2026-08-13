@@ -23,6 +23,21 @@
 
 可与更细的产品推进粒度并用（概念探索 / 供应商初筛 / 产品定义 / 样品 / 大货），但**对外输出与路由以四档为主**。
 
+### Order Conversion / Pre-Bulk
+
+这是 Active Project 中需要特别识别的商业收敛阶段：产品方向已经获得一定程度验证或原则认可，剩余问题可以被枚举，项目开始具备从“继续开发”转向“准备 PO / Deposit / Bulk Production”的条件。
+
+典型信号包括：
+
+- 客户已经支付样品或开发费用；
+- 决策人 / 管理层 / Board 参与评审；
+- 样品整体方向被认可，只剩可定义的修改；
+- 客户主动询问下一版样、正式价格、交期、数量或量产条件；
+- 客户愿意继续投入测试、样品、参考样或其他真实资源；
+- 已经可以明确列出“距离下单还差什么”。
+
+进入这个阶段后，不应默认继续串联式开发；应检查哪些商业准备可以和最后的验证并行进行。必要时进入 **Mode 11** 或至少运行一次 Order Conversion Check。
+
 ## 识别顺序（自动，不问用户）
 
 ```
@@ -88,7 +103,7 @@ Skill 知道这不是第一封，但不知道前序做到哪一步。
 |---|---|
 | New Lead | Mode 1（询盘分析）+ 默认背调 |
 | Qualified Inquiry | Mode 1 或 Mode 4/5（视材料：报价/技术包） |
-| Active Project | 按最新材料选 Mode 4/5/6/8…；不重开 New Lead 全流程 |
+| Active Project | 按最新材料选 Mode 4/5/6/8…；若进入 Order Conversion / Pre-Bulk，考虑 Mode 11；不重开 New Lead 全流程 |
 | Re-engagement | Mode 1/2 成分 + Recency 向背调；先确认是否仍同一项目 |
 
 复合输入仍：选一个主 Mode，其余作次要引用。
@@ -99,6 +114,7 @@ Skill 知道这不是第一封，但不知道前序做到哪一步。
 
 ```markdown
 **项目阶段**：New Lead / Qualified Inquiry / Active Project / Re-engagement
+（Active Project 中若已进入商业收敛，可注明 Order Conversion / Pre-Bulk）
 （一句依据；若前序缺失写「持续沟通，前序信息缺失」）
 ```
 

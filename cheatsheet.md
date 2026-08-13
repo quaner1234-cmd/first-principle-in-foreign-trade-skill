@@ -1,6 +1,6 @@
 # 速查卡：决策表
 
-对齐 Project Edition **1.3.1**
+对齐 Project Edition **1.4**
 
 ## 场景 → 动作
 
@@ -17,21 +17,30 @@
 | 复杂责任项目 | 内部分 Can Do/Assist/Coordinate/Cannot；对外不机械四层声明 |
 | 付款/PI/多节点 | Execution Friction：可安全合并则合并；不因减节点虚构费用 |
 | 供应商说做不到 | Original Observation → Candidate Explanation → Evidence → Verification |
+| 样品/测试/报价已形成实质进展 | Order Conversion Check：Order Blocker ≠ Remaining Detail；Next Commitment Check |
+| 产品方向已原则认可 | Validation + Conversion 可并行；不要无限改样；进入 Mode 11 若需商业收敛 |
 | 项目结束 | 案例卡；方法被推翻则写明修正 |
 
 ## 判断权重
 
 **项目行为证据与对话动量 > 需求完整度 > 商业可行性 > 主体背景 > 表面语言**
 
-## 六原则
+## 七原则
 
-Unknown≠Blocker｜承诺≠探索｜研究发散/判断收敛/沟通压缩｜协助≠责任｜Reference≠Specification｜Decision Ownership≠Information Generation
+Unknown≠Blocker｜承诺≠探索｜研究发散/判断收敛/沟通压缩｜协助≠责任｜Reference≠Specification｜Decision Ownership≠Information Generation｜Clarity → Commitment
 
 ## Progressive Specification
 
 `Unknown → Public Reference → Candidate Range → Working Assumption → Verified Input → Final Specification`
 
 Development prototype 可早于 Final Spec；正式验证样/PP/量产需要更高 Verified Input。
+
+产品开发节奏：`Diverge → Explore → Verify → Converge → Convert`
+
+## Commercial Commitment Ladder / Order Conversion Check
+
+每完成有意义的开发或验证节点，问：现在合理的下一层客户承诺是什么？  
+区分真正阻止 PO / Deposit 的 Order Blocker 与可后置到 PP / production preparation 的 Remaining Detail。不要催单。
 
 ## 未知五秒分类
 
@@ -44,11 +53,12 @@ A 公开先查｜B 客户问 1–3｜C 内部核实｜D 测试计划｜No Path �
 - ❌ 普通回复堆叠免责声明；内部责任模型整段外显  
 - ❌ 为减节点虚构费用；跨项目机械复制答案  
 - ❌ 精确成交概率；虚构能力/认证/供应商  
+- ❌ 样品已认可却因小细节不谈数量/交期/报价；把 Order Conversion 做成催单  
 
 ## 必须做的
 
-- ✅ Clarity before closure；Tool-before-Question  
+- ✅ Clarity before closure；Tool-before-Question；Clarity → Commitment  
 - ✅ 当前关键未知 + 解决路径 + Blocker 状态分开  
 - ✅ 主动可澄清项 + 并行推进 + 最小有效推进  
 - ✅ Reply Gate；Natural Customer Communication  
-- ✅ 工作假设可被现实推翻  
+- ✅ 节点后 Order Conversion Check；工作假设可被现实推翻  

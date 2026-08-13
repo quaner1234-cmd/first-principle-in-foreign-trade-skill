@@ -1,6 +1,6 @@
 # Customer Reply（客户回复规则）
 
-对齐 Project Edition **1.3.1**。  
+对齐 Project Edition **1.4**。  
 只有用户明确要求时才生成客户话术。
 
 ## Reply Gate

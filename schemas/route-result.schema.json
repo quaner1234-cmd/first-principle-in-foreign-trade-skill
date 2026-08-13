@@ -27,10 +27,10 @@
       "enum": ["positive", "weak", "negative", "unknown"]
     },
     "momentum_basis": {"type": "string", "minLength": 1},
-    "primary_mode": {"type": "integer", "minimum": 1, "maximum": 10},
+    "primary_mode": {"type": "integer", "minimum": 1, "maximum": 11},
     "secondary_modes": {
       "type": "array",
-      "items": {"type": "integer", "minimum": 1, "maximum": 10},
+      "items": {"type": "integer", "minimum": 1, "maximum": 11},
       "maxItems": 3,
       "uniqueItems": true
     },

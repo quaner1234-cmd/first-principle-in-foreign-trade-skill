@@ -1,7 +1,7 @@
 # Output Contract（输出契约）
 
 Action Mode 必须可扫读。不要求每次机械展示全部标题；按复杂度压缩，但内部逻辑应保持。  
-对齐 Project Edition **1.3.1**。
+对齐 Project Edition **1.4**。
 
 ## 模板
 
@@ -57,6 +57,19 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 ## 并行推进项
 
 短列表。
+
+## Order Conversion Check
+
+当项目刚完成有意义的样品、测试、报价、评审或技术收敛节点时，必要时补充：
+
+- 距离 Bulk Order 还差什么；
+- 哪些是真正 Order Blockers；
+- 哪些可以后置到 PP / production preparation；
+- 当前合理的 Next Customer Commitment；
+- 哪些最后验证与商业准备可以并行；
+- 时间窗口是否已经需要立即锁定。
+
+如果项目明显还没到商业收敛阶段，不要为了完整性强行加入。
 
 ## 承诺边界
 
@@ -115,3 +128,6 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 - ❌ 因安全/法律变量而拒绝提供任何前期 Reference  
 - ❌ 普通回复堆叠法律式免责声明；把内部责任模型整段外显  
 - ❌ 为减节点而虚构费用；或把旧工作假设当成不可推翻  
+- ❌ 样品已原则认可，却因可后置细节完全不谈数量 / 交期 / 正式报价  
+- ❌ 把 Order Conversion 做成催单（`When will you place the order?`）  
+- ❌ 为拿 PO 把安全 / 性能 / 交期 / 量产可行性错误降级  

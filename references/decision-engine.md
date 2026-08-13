@@ -1,6 +1,6 @@
 # Decision Engine（统一判断内核）
 
-所有场景都必须先运行同一个判断内核。对齐 Project Edition **1.3.1**。
+所有场景都必须先运行同一个判断内核。对齐 Project Edition **1.4**。
 
 ## 流程
 
@@ -10,7 +10,7 @@ RAW INPUT
 1. 识别客户 / 项目；读取已有对话与项目上下文
    - 持续项目 → 沿用已有事实，禁止当成全新 New Lead 重跑
 ↓
-2. 判断项目阶段（四档）+ 对话动量（Positive / Weak / Negative）
+2. 判断项目阶段（四档 + Active Project 中的 Order Conversion / Pre-Bulk）+ 对话动量（Positive / Weak / Negative）
    - project-stage.md / clarity-engine.md
    - 不确定且会改变下一步 → 只问一个前序问题
 ↓
@@ -42,9 +42,14 @@ RAW INPUT
     + Staged Commitment（投入是否与阶段和客户投入证据匹配）
     + Execution Friction / Transaction Node Check
 ↓
-13. 停止条件（仅 Hard Stop）
+13. Order Conversion Check（刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点时）
+    - 区分 Order Blocker 与 Remaining Detail
+    - Next Commitment Check：当前合理的下一层客户承诺是什么？
+    - 检查 Validation + Conversion 是否可并行
 ↓
-14. Reply Gate：仅当用户明确要求时，生成压缩后的客户回复
+14. 停止条件（仅 Hard Stop）
+↓
+15. Reply Gate：仅当用户明确要求时，生成压缩后的客户回复
     （customer-reply.md：Natural Customer Communication）
 ```
 
@@ -109,6 +114,14 @@ RAW INPUT
 4. 不能准确确认时，最低成本确认方式是什么？  
 
 **减少节点 ≠ 提前承诺未知。**
+
+## Order Conversion Check
+
+刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点时，默认运行一次。详见 `clarity-engine.md`。
+
+依次问：距离 Bulk Order 还差什么；哪些是 Order Blocker；哪些是可后置 Remaining Detail；当前合理的 Next Customer Commitment；哪些最后验证可与正式核价 / 交期 / breakdown / PO 条件并行；时间窗口是否必须锁定。
+
+项目明显未到商业收敛阶段时，不要为完整性强行加入。
 
 ## 提问限制
 
