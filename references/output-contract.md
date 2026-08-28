@@ -1,7 +1,7 @@
 # Output Contract（输出契约）
 
 Action Mode 必须可扫读。不要求每次机械展示全部标题；按复杂度压缩，但内部逻辑应保持。  
-对齐 Project Edition **1.4.5**。
+对齐 Project Edition **1.4.6**。
 
 ## 模板
 
@@ -51,18 +51,38 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 - 1–3 个按决策影响排序的 Barrier
 - 不把所有 Unknown 改写成 Barrier，也不因客户问题顺序决定优先级
 
+## Product Reality Check（产品 / 技术 frame 可能影响决定时）
+
+仅在必要时出现，默认压缩为：
+
+- **Preferred Candidate**：当前首选；
+- **Main Trade-off**：最重要的代价 / 风险；
+- **Reality Verification**：当前项目还需谁确认 / 做什么测试。
+
+如果做了 Reality Benchmark，简述最有决策价值的成熟产品 / 技术资料 / 标准依据；不要把搜索报告整段输出。公开 Benchmark ≠ 当前项目 Verified Input。
+
 ## 现在可以主动澄清什么
 
-- Web / 公开资料 / 成熟产品 Reference：…
-- 内部 / 供应商 / 版师 / 测试：…
+- Web / 公开资料 / 成熟产品 / 技术资料 Reference：…
+- 内部 / 供应商 / 工程 / 测试：…
 - 不依赖客户回复也能推进：…
 
-（有联网且存在 A 类未知时，分析过程中应先查再写结论。）
+（有联网且存在 A 类未知时，分析过程中应先查再写结论；但不要为完整性无差别搜索。）
 
 ## 下一步最小有效推进
 
 最多 3 项。标准：低成本 × 高信息增量 × 保持动量。  
 若 Reference 已够支持低风险下一步，优先用 Reference 推进。
+
+## 给现实责任人的最小 Handoff（需要内部 / 供应商 / 实验室 / 管理层确认时）
+
+默认只给：
+
+1. **推荐方向**：一句话；
+2. **必要依据**：1–3 条；
+3. **待确认问题**：1–3 个，且答案会改变下一步。
+
+只有当前决定确实需要比较 trade-off 时才给少量 options，并明确首选。完整研究和来源按需提供，不默认整包转交。
 
 ## 可直接提供的资料 / 证据
 
@@ -128,6 +148,7 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 
 - Reply Gate：未明确要求则不生成话术  
 - Natural Customer Communication：内部严谨，对外自然  
+- Wide In → Narrow Out：客户只看到当前决定所需的信息，不看到完整研究过程  
 - 用措辞强度表达不确定性（as a reference / please confirm…），不默认免责声明堆叠  
 - Boundary by Design：流程与确认节点管理边界  
 - 商业条件：内部拆清，对外压缩  
@@ -140,8 +161,10 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 - ❌ 把承诺边界当成探索边界  
 - ❌ Positive Momentum 下主动寻找结案理由  
 - ❌ 首轮产品开发询盘直接全面收敛（无 Hard Stop 时）  
-- ❌ 对客户倾倒研究报告；跨项目机械复制答案  
-- ❌ 把 Reference 写成 Final Specification  
+- ❌ 默认接受客户原始产品 frame，不检查是否存在结构性冲突 / 过度设计 / 量产风险  
+- ❌ 无差别堆行业资料，没有 Preferred Candidate 和 Reality Verification  
+- ❌ 对客户或现实责任人倾倒完整研究报告、全部假设和所有 Unknown  
+- ❌ 把 Reference 写成 Final Specification，或把公开 Benchmark 写成我方既有能力  
 - ❌ 因安全/法律变量而拒绝提供任何前期 Reference  
 - ❌ 普通回复堆叠法律式免责声明；把内部责任模型整段外显  
 - ❌ 为减节点而虚构费用；或把旧工作假设当成不可推翻  
