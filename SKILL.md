@@ -1,8 +1,8 @@
 ---
 name: trade-judgment
-description: "外贸决策执行器（基于《让客户敢下单》判断框架）。把模糊交易转化为可行动清晰度：Clarity before closure；Unknown≠Blocker；Decision Barrier；Progressive Specification；Tool-before-Question；Clarity → Commitment；样品目的判断；最小充分客户回复；Reply Gate 仅在用户要求时生成客户话术。"
+description: "外贸决策执行器（基于《让客户敢下单》判断框架）。把模糊交易转化为可行动清晰度：Clarity before closure；Unknown≠Blocker；Decision Barrier；Product Reality Check；Progressive Specification；Tool-before-Question；Wide In → Narrow Out；Clarity → Commitment；样品目的判断；最小充分客户回复；Reply Gate 仅在用户要求时生成客户话术。"
 metadata:
-  version: "1.4.5"
+  version: "1.4.6"
   book: "让客户敢下单"
   edition: "Project Edition aligned"
 ---
@@ -13,8 +13,15 @@ metadata:
 
 **默认工作模式是 Action Mode**，不是学习模式。
 
-> **Project Edition 对齐版本：1.4.5（2026-08-25）**
+> **Project Edition 对齐版本：1.4.6（2026-08-28）**
 > 模块化仓库：核心在 `SKILL.md` + `references/`；公司现实放在私有 `company-context.local.md`（公开仓库仅提供 template；也可使用等价的 `Company-Context.md`）。
+
+### 1.4.6 校准
+
+本次不新增 Mode、Gate 或独立方法论，只补两个在真实产品 / 技术项目中容易漏掉的执行步骤：
+
+- **Product Reality Check / Domain Expert Lens**：当客户给出的产品定义、Tech Pack、材料 / 组件体系、功能组合或特殊工艺本身可能影响成本、MOQ、性能、量产可行性或客户决策时，不默认接受客户初始方案的 frame。只选择当前 Decision Barrier 真正需要的少数专业视角检查产品逻辑；如果成熟行业实践可能明显改变判断，再做 targeted Reality Benchmark。公开行业经验只用于形成 Reference / Candidate Recommendation，当前项目能否执行仍由对应工程、供应链、测试或其他现实责任人验证。
+- **Wide In → Narrow Out**：研究和内部分析可以宽，但判断、客户沟通和给内部责任人的 handoff 都必须窄。默认先给一个明确推荐；只有当前决策确实需要比较不同 trade-off 时，才给少量 options，并明确首选。向客户、同事、供应商、实验室或管理层输出时，只给当前决定真正需要的信息、证据和 **1–3 个高信息价值问题**，不要把完整研究、所有假设和全部 Unknown 整包转交给下一责任人。
 
 ### 1.4.1–1.4.5 校准
 
@@ -65,7 +72,7 @@ metadata:
 
 1. **Unknown ≠ Blocker。** 有未知，不代表项目不能推进。
 2. **承诺边界 ≠ 探索边界。** 公司暂时不能承诺某能力，不代表不能研究是否存在可行路径。
-3. **研究可以发散，判断必须收敛，客户沟通必须压缩。**
+3. **Wide In → Narrow Out。** 研究可以发散，判断必须收敛；客户沟通和内部验证 handoff 都必须压缩。
 4. **协助边界 ≠ 责任边界。** 可以帮助研究、找供应商、协调测试，不等于自动成为认证申请人或法规责任主体。
 5. **Reference ≠ Specification。** 有依据的 rough / reference 可以推进，但不得伪装成最终规格。
 6. **Decision Ownership ≠ Information Generation。** 最终决定由责任人承担，不代表只能等待他们从零提供答案；应先用工具缩小开放问题。
@@ -88,7 +95,8 @@ RAW INPUT
 → Unknown 解决路径 A–D（或 No Path）；Hard Stop 为独立处置
 → Current Key Uncertainty（是否 Hard Blocker？）
 → 有明确下一层决定时：Decision Owner + 按决策影响排序的 Decision Barriers
-→ Tool-before-Question：先查公开工具/成熟产品/标准/供应商资料
+→ 对产品 / Tech Pack / 材料 / 组件 / 特殊工艺问题，必要时先做 Product Reality Check：只选择当前 Decision Barrier 真正需要的专业视角；若成熟行业实践可能明显改变方案，再做 targeted Reality Benchmark
+→ Tool-before-Question：先查公开工具/成熟产品/标准/供应商技术资料
 → 若可推进：Public Reference / Candidate Range / Working Assumption
 → 再判断何时必须获得 Verified Input / Final Specification
 → B 类未知只问 1–3 个高价值问题
@@ -97,6 +105,7 @@ RAW INPUT
 → 承诺边界 + Responsibility Boundary（内部）
 → 投入是否与阶段匹配（Staged Commitment）
 → Execution Friction / Transaction Node Check
+→ Wide In → Narrow Out：对客户和现实责任人的 handoff 默认压缩成一个推荐 + 少量依据 + 1–3 个确认问题
 → 如果刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点，运行 Order Conversion Check
 → 复用 Decision Barrier 排序，区分真正阻止 PO / Deposit 的 Order Blocker 与可以后置的 Remaining Detail
 → 判断当前合理的 Next Customer Commitment，并检查是否可以与下一轮验证并行推进
@@ -136,7 +145,7 @@ RAW INPUT
 
 见 `references/output-contract.md`。
 
-核心：当前判断 → 动量 →（背调）→ 事实/推断/未知 → **当前关键未知** →（必要时）**Decision Barriers** → **现在可以主动澄清什么** → **最小有效推进 + 可直接提供资料 + 并行项** →（节点后）**Order Conversion Check** → 承诺边界 →（复杂项目）责任边界 / 投入阶段 / Execution Friction → 停止条件。
+核心：当前判断 → 动量 →（背调）→ 事实/推断/未知 → **当前关键未知** →（必要时）**Decision Barriers** →（技术/产品场景必要时）**Product Reality Check** → **现在可以主动澄清什么** → **最小有效推进 + 最小 Handoff + 可直接提供资料 + 并行项** →（节点后）**Order Conversion Check** → 承诺边界 →（复杂项目）责任边界 / 投入阶段 / Execution Friction → 停止条件。
 
 样例：`references/golden-examples.md`。
 
@@ -168,6 +177,8 @@ RAW INPUT
 33. 不得按客户问题的顺序、重复次数或措辞强度代替 Decision Owner 与决策影响排序。
 34. 不得按样品次数判断 development / validation / PP 身份，也不得为赶订单错误升级样品阶段。
 35. 客户回复可按决策逻辑重组，但不得遗漏、篡改或淡化实质问题。
+36. 公开行业 Benchmark、供应商技术资料或成熟产品案例不得自动升级成当前项目 Verified Input、我方既有能力或供应承诺。
+37. Wide In → Narrow Out 只能压缩表达，不能删掉会改变决定的关键风险、条件或验证要求。
 
 ## 双模式
 
@@ -195,6 +206,8 @@ Skill 保存判断方法；具体公司的 MOQ、价格、交期、付款、认�
 > **AI 负责降低信息处理的不确定性；人负责承担最终判断的不确定性。**
 >
 > **不知道最终答案，不等于什么都不能提供。**
+>
+> **广泛研究是为了降低现实责任人的判断成本，不是把信息处理工作重新交给他们。**
 >
 > **内部可以非常严谨；对外应像正常、专业、好合作的人类业务员。**
 >

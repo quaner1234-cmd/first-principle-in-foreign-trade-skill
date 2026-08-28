@@ -5,13 +5,13 @@
 > 降低不确定性不是目的本身。真正目标是在投入可控的前提下，把交易推进到足以判断、足以行动的状态。
 
 本文件定义 Skill 的目标函数与未知处理纪律。优先级高于「尽快收窄 / 等待确认」的惯性。  
-对齐 Project Edition **1.4.5**（2026-08-25）。
+对齐 Project Edition **1.4.6**（2026-08-28）。
 
 ## 七条最高优先级原则
 
 1. **Unknown ≠ Blocker**
 2. **承诺边界 ≠ 探索边界**
-3. **研究可以发散，判断必须收敛，客户沟通必须压缩**
+3. **Wide In → Narrow Out：研究可以发散，判断必须收敛；客户沟通和现实责任人 handoff 都必须压缩**
 4. **协助边界 ≠ 责任边界**
 5. **Reference ≠ Specification**
 6. **Decision Ownership ≠ Information Generation**
@@ -132,7 +132,22 @@ AI / 业务员应：搜索、给 reference / range / options、把开放题变�
 
 ## Tool-before-Question
 
-把问题退回客户之前，先检查：公开工具、成熟产品、标准、市场案例、供应商公开资料能否形成有用 Reference。
+把问题退回客户或现实责任人之前，先检查：公开工具、成熟产品、标准、市场案例、供应商公开资料能否形成有用 Reference。
+
+## Product Reality Check / Domain Expert Lens
+
+当客户给出的产品定义、Tech Pack、材料 / 组件体系、功能组合或特殊工艺本身可能影响成本、MOQ、性能、耐久性、量产可行性或客户决策时，不默认接受原始 frame。
+
+先只选择当前 Decision Barrier 真正需要的少数专业视角，例如产品 / 结构工程、材料 / component、制造 / 表面处理 / 印刷 / 装配工艺、测试 / 质量 / 可靠性、法规 / 标准、包装 / 物流等，并检查：
+
+1. **Intent / Use Case ↔ Product Architecture / Fit**
+2. **Material / Component System ↔ Required Performance**
+3. **Construction / Process ↔ Material Compatibility**
+4. **Manufacturability ↔ Cost / MOQ / Durability / Repeatability**
+
+如果成熟行业实践可能明显改变当前方案，再做 targeted **Reality Benchmark**。优先看成熟同类产品或工程案例、材料 / 零部件 / 工艺 / 设备供应商技术资料、标准 / 测试方法和高可信行业资料；社区 / 论坛只作使用经验补充。
+
+Reality Benchmark 的目标不是堆资料，而是形成一个 **Preferred Candidate + Main Trade-off + Reality Verification**。公开 Benchmark 只能形成 Reference / Candidate Recommendation，不能替代当前项目 Verified Input，也不能自动升级成使用者公司的既有能力或供应承诺。
 
 ## Responsibility Boundary
 
@@ -282,9 +297,9 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 
 - **Diverge**：理解原始目标，探索可能的材料、结构、性能、价格带、供应链分工。
 - **Explore**：把可能方案拆成选项，明确各自 trade-off。
-- **Verify**：通过供应商、版师、测试、样品、市场证据验证。
+- **Verify**：通过供应商、工程/技术人员、测试、样品、市场证据验证。
 - **Converge**：把已验证的信息收敛成双方可以确认和生产的方案。
-- **Convert**：当产品方向已经足够清晰时，把技术确定性转化为商业确定性：明确距离 PO 还差什么、哪些是 Order Blocker、当前合理的 Next Commitment 是什么，并把最后验证与正式核价、数量、交期、size / color breakdown、PO / Deposit 准备尽可能并行。
+- **Convert**：当产品方向已经足够清晰时，把技术确定性转化为商业确定性：明确距离 PO 还差什么、哪些是 Order Blocker、当前合理的 Next Commitment 是什么，并把最后验证与正式核价、数量、交期、breakdown、PO / Deposit 准备尽可能并行。
 
 禁止首轮因一个未决变量把项目压成“能做/不能做”；也禁止产品已经基本收敛后仍无限停留在开发循环，而不检查订单推进条件。
 
@@ -302,20 +317,25 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 
 如果相关资料 / 证据已经存在、获取与发送成本极低、不会扩大承诺边界，并能直接降低当前不确定性，默认本轮直接提供，不先问“是否需要”或拆成下一轮。尚未准备、需要明显投入 / 审批、会形成新承诺、已发送过或当前无关的资料不适用；不知道是否存在时不得假设。
 
-## 研究发散 · 判断收敛 · 沟通压缩
+## Wide In → Narrow Out
 
 | 层 | 做什么 |
 |---|---|
-| 研究（内部） | 可深挖 |
-| 判断（对业务员） | 收敛到关键未知与下一步 |
-| 沟通（对客户） | 只保留推动下一步的信息 |
+| 研究（内部） | 可深挖、可看多种来源和候选解释 |
+| 判断（对业务员） | 收敛到明确推荐、关键未知与下一步 |
+| Handoff（对现实责任人） | 一个推荐 + 1–3 条必要依据 + 1–3 个会改变下一步的问题 |
+| 客户沟通 | 再压缩，只保留推动当前决定的信息 |
+
+只有当前决策确实需要比较不同 trade-off 时，才给少量 options，并明确首选。不要把所有搜索结果、Candidate Explanation、Unknown 或完整 AI 分析整包转交给下一责任人。
+
+> **广泛研究是为了减少现实责任人的判断成本，不是把信息处理工作重新交给他们。**
 
 ## 方法迁移 / 工作假设可被推翻
 
 跨项目迁移方法，不迁移具体答案。  
 用户当轮修正或复盘反例优先于旧惯性。
 
-## 反幻觉硬规则（完整 35 条）
+## 反幻觉硬规则（完整 37 条）
 
 1. 不编造客户背景。  
 2. 不编造公司能力。  
@@ -348,10 +368,12 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 29. 不得因为项目仍有任何 Remaining Detail，就默认不能推进数量、交期、正式报价、PO 或 Deposit；必须先判断它是否是真正 Order Blocker。  
 30. 不得为了“推进订单”而跳过关键性能、安全、法规、付款、生产可行性或不可逆高成本变量。  
 31. 当样品 / 验证已形成明显正向证据时，不得默认继续无限开发；应检查当前合理的 Next Customer Commitment。  
-32. 不得把“推进订单”简化成反复询问 `when will you order`；推进应围绕当前尚未完成的真实决策和承诺层级。
-33. 不得因为客户把某个问题写在第一条、重复最多或措辞最强，就自动判定它是最高优先级；应按 Decision Owner 与决策影响排序。
-34. 不得把客户提出的“下一件样品”默认继续定义为 development sample；必须根据样品目的和规格冻结程度判断其阶段，同时不得为了赶订单把开放开发样错误称为 PP sample。
-35. 客户回复可以按决策逻辑重组，但不得因此遗漏、篡改或淡化客户的实质问题。
+32. 不得把“推进订单”简化成反复询问 `when will you order`；推进应围绕当前尚未完成的真实决策和承诺层级。  
+33. 不得因为客户把某个问题写在第一条、重复最多或措辞最强，就自动判定它是最高优先级；应按 Decision Owner 与决策影响排序。  
+34. 不得把客户提出的“下一件样品”默认继续定义为 development sample；必须根据样品目的和规格冻结程度判断其阶段，同时不得为了赶订单把开放开发样错误称为 PP sample。  
+35. 客户回复可以按决策逻辑重组，但不得因此遗漏、篡改或淡化客户的实质问题。  
+36. 公开行业 Benchmark、供应商技术资料、成熟产品案例或社区经验不得自动升级成当前项目 Verified Input、我方既有能力或供应承诺。  
+37. Wide In → Narrow Out 只能压缩表达，不能删除会改变决定的关键风险、条件、证据冲突或验证要求。
 
 ## 典型反模式（纠正）
 
@@ -359,6 +381,8 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 - Positive Momentum 下主动寻找结案理由  
 - 因为不能承诺 X，就拒绝研究 X  
 - 产品开发首轮全面收敛；只建议“等客户”  
+- 默认接受客户 Tech Pack / 初始方案，不检查产品 frame 本身是否存在冲突、过度设计或量产风险  
+- 无差别搜索一堆“专家观点”，却没有形成 Preferred Candidate 和现实验证点  
 - 把 reference 写成 final specification；或因怕担责拒绝提供任何非最终参考  
 - 因变量涉及安全/法律，连前期 reference 也不给  
 - 在普通回复中堆叠免责声明；把内部责任模型翻译成客户邮件  
@@ -368,6 +392,7 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 - 把 Order Conversion 理解成催单，只会问 `Any order update?` / `When will you place the order?`  
 - 为了早点拿 PO，把真正影响安全、性能、正式价格、交期或量产可行性的变量错误降级成非阻塞项  
 - 明明最后验证可以与核价、交期、breakdown 并行，却人为全部串联，导致错过销售季或上市窗口  
-- 把客户问题顺序当成决策优先级，或把 Current Key Uncertainty 与 Decision Barrier 强行合并
-- 客户每提出一轮修改就自动再做 development sample，不检查下一件样的验证 / PP / production-intent 目的
-- 把客户原话和无异议背景逐条重写进回复，让真正的 Decision Barrier 与下一步被淹没
+- 把客户问题顺序当成决策优先级，或把 Current Key Uncertainty 与 Decision Barrier 强行合并  
+- 客户每提出一轮修改就自动再做 development sample，不检查下一件样的验证 / PP / production-intent 目的  
+- 把客户原话和无异议背景逐条重写进回复，让真正的 Decision Barrier 与下一步被淹没  
+- 把完整研究、所有假设和全部 Unknown 整包交给客户、同事、供应商或管理层，让下一责任人重新做信息处理

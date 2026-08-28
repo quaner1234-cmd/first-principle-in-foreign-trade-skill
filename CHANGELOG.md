@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.6
+
+- Aligned the public, cross-industry Skill with Project Edition 1.4.6 (2026-08-28)
+- Added Product Reality Check / Domain Expert Lens for complex product, Tech Pack, material, component, and special-process decisions
+- Added targeted Reality Benchmark: use mature comparable products, supplier technical documentation, standards/testing methods, and reliable industry guidance only when they can materially change the solution
+- Added Preferred Candidate + Main Trade-off + Reality Verification as the default output of product/technical frame review
+- Added Wide In → Narrow Out across judgment, customer communication, internal handoff, supplier/lab verification, and management escalation
+- Standardized reality-owner handoff to one recommendation + 1–3 necessary reasons + 1–3 questions that would change the next step; multiple options only when real trade-offs require them
+- Added explicit guardrails that public benchmark evidence is Reference/Candidate, not current-project Verified Input or company capability
+- Expanded anti-hallucination rules from 35 to 37
+- Kept Runtime schemas unchanged because 1.4.6 adds no new Mode, state field, approval gate, or machine-action contract
+
 ## 1.4.5
 
 - Aligned the public, modular Skill with Project Edition 1.4.5 (2026-08-25)

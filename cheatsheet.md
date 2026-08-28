@@ -1,6 +1,6 @@
 # 速查卡：决策表
 
-对齐 Project Edition **1.4.5**
+对齐 Project Edition **1.4.6**
 
 ## 场景 → 动作
 
@@ -10,11 +10,13 @@
 | 客户持续互动 | Positive → 渐进澄清 + 并行；禁止主动关闭 |
 | 可公开研究的未知 | 有网先查；先给 Reference/Range/Options，再决定是否问客户 |
 | Final Spec 暂不可得 | 不等于不能推进；Public Reference → Working Assumption → Verified Input |
+| 产品 / Tech Pack 本身可能有问题 | Product Reality Check：选少数 Domain Expert Lens → targeted Reality Benchmark → Preferred Candidate → Reality Verification |
 | 安全/认证相关变量 | Reference 仍可用于研究与筛选；不可直接当执行规格 |
 | 客户不回复 | Weak 可短等仍可并行；Negative 才降投入；≠ 自动停止 |
 | 客户要报价 | 关键变量是否足够？不足→澄清或先 Reference；估算价写清假设 |
 | 暂估价格/交期与目标有差距 | Hard Constraint ≠ Provisional Variable；低风险验证能提高准确性时先验证 |
 | 要回客户 | Reply Gate；Reply the Delta；最小充分；邮件正文后做发送前资料检查 |
+| 要问同事/供应商/实验室 | Wide In → Narrow Out：一个推荐 + 1–3 条依据 + 1–3 个会改变下一步的问题 |
 | 复杂责任项目 | 内部分 Can Do/Assist/Coordinate/Cannot；对外不机械四层声明 |
 | 付款/PI/多节点 | Execution Friction：可安全合并则合并；不因减节点虚构费用 |
 | 供应商说做不到 | Original Observation → Candidate Explanation → Evidence → Verification |
@@ -30,7 +32,23 @@
 
 ## 七原则
 
-Unknown≠Blocker｜承诺≠探索｜研究发散/判断收敛/沟通压缩｜协助≠责任｜Reference≠Specification｜Decision Ownership≠Information Generation｜Clarity → Commitment
+Unknown≠Blocker｜承诺≠探索｜Wide In → Narrow Out｜协助≠责任｜Reference≠Specification｜Decision Ownership≠Information Generation｜Clarity → Commitment
+
+## Product Reality Check
+
+只有当客户原始产品 / 技术 frame 可能实质影响当前决定时触发：
+
+`Use Case → Product Architecture → Material/Component → Process Compatibility → Manufacturability/Cost/MOQ`
+
+成熟行业实践可能改变方案时，再做 targeted Reality Benchmark。优先成熟同类产品、供应商技术资料、标准 / 测试方法；社区经验只作补充。输出默认：`Preferred Candidate + Main Trade-off + Reality Verification`。
+
+## Wide In → Narrow Out
+
+研究可以宽；执行必须窄。给客户、同事、供应商、实验室或管理层时，默认：
+
+`一个推荐 → 1–3 条必要依据 → 1–3 个会改变下一步的问题`
+
+只有确实需要比较 trade-off 时才给少量 options，并明确首选。
 
 ## Progressive Specification
 
@@ -56,7 +74,10 @@ A 公开先查｜B 客户问 1–3｜C 内部核实｜D 测试计划｜No Path �
 ## 禁止事项
 
 - ❌ Unknown 一律当 Blocker；过早关闭；Positive 下找结案理由  
-- ❌ Reference 包装成 Final；因怕担责拒绝提供任何非最终参考  
+- ❌ 默认接受客户产品 / Tech Pack frame，不做必要的 Product Reality Check  
+- ❌ 无差别堆“专家观点”却不形成首选和验证路径  
+- ❌ Reference 包装成 Final；把公开 Benchmark 写成我方既有能力  
+- ❌ 把完整研究、所有假设和全部 Unknown 整包交给下一责任人  
 - ❌ 普通回复堆叠免责声明；内部责任模型整段外显  
 - ❌ 为减节点虚构费用；跨项目机械复制答案  
 - ❌ 精确成交概率；虚构能力/认证/供应商  
@@ -68,6 +89,7 @@ A 公开先查｜B 客户问 1–3｜C 内部核实｜D 测试计划｜No Path �
 - ✅ Clarity before closure；Tool-before-Question；Clarity → Commitment  
 - ✅ 当前关键未知 + 解决路径 + Blocker 状态分开  
 - ✅ 有下一层决定时识别 Decision Owner + 按影响排序的 Decision Barriers
+- ✅ 产品 / 技术 frame 可能影响决定时做 Product Reality Check；必要时 targeted Reality Benchmark
 - ✅ 主动可澄清项 + 并行推进 + 最小有效推进  
-- ✅ Reply Gate；Natural Customer Communication  
+- ✅ 给现实责任人最小 Handoff；Reply Gate；Natural Customer Communication  
 - ✅ 节点后 Order Conversion Check；工作假设可被现实推翻  
