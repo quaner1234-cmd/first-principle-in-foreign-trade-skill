@@ -5,7 +5,7 @@
 > 降低不确定性不是目的本身。真正目标是在投入可控的前提下，把交易推进到足以判断、足以行动的状态。
 
 本文件定义 Skill 的目标函数与未知处理纪律。优先级高于「尽快收窄 / 等待确认」的惯性。  
-对齐 Project Edition **1.4**（2026-08-13）。
+对齐 Project Edition **1.4.5**（2026-08-25）。
 
 ## 七条最高优先级原则
 
@@ -22,17 +22,31 @@
 找到 Unknown 后，**先问**：这个未知由谁、用什么方式、以多大成本可以变成事实？  
 **不要**立刻问「会不会阻塞项目」并进入等待。
 
-### Current Key Uncertainty vs Hard Blocker
+### Current Key Uncertainty vs Decision Barrier vs Hard Blocker
 
-**Current Key Uncertainty**：当前最值得优先澄清的未知；项目仍可能通过其他动作推进。
+三个概念解决不同问题，不能混用：
 
-**Hard Blocker** 仅当同时满足：
+#### Current Key Uncertainty
 
-1. 直接影响下一步关键决策；
+当前最值得优先澄清的信息未知，回答：**下一步最值得弄清楚什么？** 它可能影响报价、技术方案、客户选择或内部判断，但项目通常仍可通过其他动作推进。
+
+#### Decision Barrier
+
+让客户、采购、Board、管理层或内部责任人暂时不能做下一层决定的因素，回答：**谁还不能决定，为什么？** 它不一定是 Unknown，例如已知价格超预算、决策人尚未批准、产品方向已接受但客户对尺码体系仍缺乏信心、目标交期已临界。
+
+多个 Decision Barriers 不要平铺，依次看：是否直接影响 Decision Owner 批准；影响整体还是局部；是否受时间窗口限制；是否改变价格、数量、关键性能或生产可行性；是否已有清晰低成本解决路径。
+
+#### Hard Blocker
+
+只有同时满足以下三点才成立：
+
+1. 该问题直接影响下一步关键决策；
 2. 当前没有合理的低成本解决路径；
 3. 没有它，就无法采取任何有价值的推进动作。
 
-否则不要写「项目卡死」。更好的表达：当前关键未知 / 报价精度限制变量 / 进入正式打样前需确认。
+#### 三者关系
+
+三者可能重合，也可能完全不同。客户先写、重复最多或措辞最强的问题，不一定最重要；邮件顺序不能替代决策排序。不要把“重要”误写成“阻塞”，也不要把“有答案”误写成“已经敢做决定”。
 
 ## 未知解决路径（A–D）+ Hard Stop
 
@@ -188,12 +202,12 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 
 依次问：
 
-1. **What still stands between this project and a bulk order?**
-2. 剩余事项中，哪些会真正改变能否下 PO、价格、数量、交期、生产可行性或决策人批准？这些才是 **Order Blockers**。
-3. 哪些只是 Remaining Details，可以安全留到 PP sample、production preparation、包装确认或量产前 Gate？
+1. **下一层真正需要发生什么决定？谁是 Decision Owner？**
+2. **What still stands between this project and that decision / bulk order?** 复用 Decision Barrier 逻辑并按决策影响排序。
+3. 哪些 Barrier 会真正改变能否下 PO、价格、数量、交期、关键性能、生产可行性或决策人批准？这些才优先视为 **Order Blockers**；哪些只是 Remaining Details，可以安全后置？
 4. 当前已经足以要求客户做哪一层 Next Commitment？
 5. 哪些内部工作可以与最后一轮验证并行：正式核价、交期确认、材料准备、size / color breakdown、PI / PO 条件等？
-6. 如果存在明确销售季、活动或上市日期，是否已经到了必须锁定时间窗口的节点？
+6. 如果存在明确销售季、活动或上市日期，时间窗口是否已经成为需要立即处理的 Barrier？
 
 ## Order Blocker ≠ Remaining Detail
 
@@ -284,6 +298,10 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 
 若 Final Specification 不可得，但有依据的 Reference 已足够支持低风险下一步，优先用 Reference 推进。
 
+### Available Asset Before Ask
+
+如果相关资料 / 证据已经存在、获取与发送成本极低、不会扩大承诺边界，并能直接降低当前不确定性，默认本轮直接提供，不先问“是否需要”或拆成下一轮。尚未准备、需要明显投入 / 审批、会形成新承诺、已发送过或当前无关的资料不适用；不知道是否存在时不得假设。
+
 ## 研究发散 · 判断收敛 · 沟通压缩
 
 | 层 | 做什么 |
@@ -297,7 +315,7 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 跨项目迁移方法，不迁移具体答案。  
 用户当轮修正或复盘反例优先于旧惯性。
 
-## 反幻觉硬规则（完整 32 条）
+## 反幻觉硬规则（完整 35 条）
 
 1. 不编造客户背景。  
 2. 不编造公司能力。  
@@ -331,6 +349,9 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 30. 不得为了“推进订单”而跳过关键性能、安全、法规、付款、生产可行性或不可逆高成本变量。  
 31. 当样品 / 验证已形成明显正向证据时，不得默认继续无限开发；应检查当前合理的 Next Customer Commitment。  
 32. 不得把“推进订单”简化成反复询问 `when will you order`；推进应围绕当前尚未完成的真实决策和承诺层级。
+33. 不得因为客户把某个问题写在第一条、重复最多或措辞最强，就自动判定它是最高优先级；应按 Decision Owner 与决策影响排序。
+34. 不得把客户提出的“下一件样品”默认继续定义为 development sample；必须根据样品目的和规格冻结程度判断其阶段，同时不得为了赶订单把开放开发样错误称为 PP sample。
+35. 客户回复可以按决策逻辑重组，但不得因此遗漏、篡改或淡化客户的实质问题。
 
 ## 典型反模式（纠正）
 
@@ -347,3 +368,6 @@ Staged Commitment 不只约束我方投入，也要检查客户是否应该随�
 - 把 Order Conversion 理解成催单，只会问 `Any order update?` / `When will you place the order?`  
 - 为了早点拿 PO，把真正影响安全、性能、正式价格、交期或量产可行性的变量错误降级成非阻塞项  
 - 明明最后验证可以与核价、交期、breakdown 并行，却人为全部串联，导致错过销售季或上市窗口  
+- 把客户问题顺序当成决策优先级，或把 Current Key Uncertainty 与 Decision Barrier 强行合并
+- 客户每提出一轮修改就自动再做 development sample，不检查下一件样的验证 / PP / production-intent 目的
+- 把客户原话和无异议背景逐条重写进回复，让真正的 Decision Barrier 与下一步被淹没

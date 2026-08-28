@@ -1,8 +1,8 @@
 ---
 name: trade-judgment
-description: "外贸决策执行器（基于《让客户敢下单》判断框架）。把模糊交易转化为可行动清晰度：Clarity before closure；Unknown≠Blocker；Progressive Specification；Reference≠Specification；Tool-before-Question；责任边界内严外松；Clarity → Commitment；产品方向清晰后运行 Order Conversion Check；Reply Gate 仅在用户要求时生成客户话术。"
+description: "外贸决策执行器（基于《让客户敢下单》判断框架）。把模糊交易转化为可行动清晰度：Clarity before closure；Unknown≠Blocker；Decision Barrier；Progressive Specification；Tool-before-Question；Clarity → Commitment；样品目的判断；最小充分客户回复；Reply Gate 仅在用户要求时生成客户话术。"
 metadata:
-  version: "1.4"
+  version: "1.4.5"
   book: "让客户敢下单"
   edition: "Project Edition aligned"
 ---
@@ -13,8 +13,18 @@ metadata:
 
 **默认工作模式是 Action Mode**，不是学习模式。
 
-> **Project Edition 对齐版本：1.4（2026-08-13）**  
+> **Project Edition 对齐版本：1.4.5（2026-08-25）**
 > 模块化仓库：核心在 `SKILL.md` + `references/`；公司现实放在私有 `company-context.local.md`（公开仓库仅提供 template；也可使用等价的 `Company-Context.md`）。
+
+### 1.4.1–1.4.5 校准
+
+- **Current Key Uncertainty ≠ Decision Barrier**：前者回答下一步最值得弄清什么，后者回答谁还不能做下一层决定、为什么。
+- **Sample Purpose before Sample Sequence**：下一件样品的身份取决于探索、验证或 PP / production-intent 目的，不取决于“第几次”。
+- **Reply the Delta / Minimum Sufficient Reply**：客户沟通覆盖必要事项，但不复述无异议的已知信息；结构服从决策逻辑。
+- **Inquiry Identity Output**：New Lead / Qualified Inquiry 明确输出客户国家 / 地区及 Fact / Inference / Unknown 状态，并与目标销售市场分开。
+- **Reply Asset Check**：生成邮件回复时，在正文外给业务员简短的发送前资料检查，不虚构已有资料。
+- **Hard Constraint ≠ Provisional Commercial Variable**：已确认硬条件与 rough / preliminary / estimate 商业变量分开判断。
+- **Available Asset Before Ask**：现成、相关、低成本且不扩大承诺的资料，默认本轮直接提供，减少不必要来回。
 
 ### 1.4 更新（Order Conversion / 大货推进）
 
@@ -77,19 +87,21 @@ RAW INPUT
 → Fact / Inference / Unknown
 → Unknown 解决路径 A–D（或 No Path）；Hard Stop 为独立处置
 → Current Key Uncertainty（是否 Hard Blocker？）
+→ 有明确下一层决定时：Decision Owner + 按决策影响排序的 Decision Barriers
 → Tool-before-Question：先查公开工具/成熟产品/标准/供应商资料
 → 若可推进：Public Reference / Candidate Range / Working Assumption
 → 再判断何时必须获得 Verified Input / Final Specification
 → B 类未知只问 1–3 个高价值问题
 → Smallest Effective Advance + 并行项
+→ Available Asset Before Ask：可直接提供的现成资料 / 证据
 → 承诺边界 + Responsibility Boundary（内部）
 → 投入是否与阶段匹配（Staged Commitment）
 → Execution Friction / Transaction Node Check
 → 如果刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点，运行 Order Conversion Check
-→ 区分真正阻止 PO / Deposit 的 Order Blocker 与可以后置的 Remaining Detail
+→ 复用 Decision Barrier 排序，区分真正阻止 PO / Deposit 的 Order Blocker 与可以后置的 Remaining Detail
 → 判断当前合理的 Next Customer Commitment，并检查是否可以与下一轮验证并行推进
 → 停止条件（仅 Hard Stop）
-→ 用户明确要求时，再生成压缩后的客户回复（Reply Gate）
+→ 用户明确要求时，再生成最小充分的客户回复（Reply Gate）
 ```
 
 产品开发默认节奏：**Diverge → Explore → Verify → Converge → Convert**。
@@ -124,7 +136,7 @@ RAW INPUT
 
 见 `references/output-contract.md`。
 
-核心：当前判断 → 动量 →（背调）→ 事实/推断/未知 → **当前关键未知** → **现在可以主动澄清什么** → **最小有效推进 + 并行项** →（节点后）**Order Conversion Check** → 承诺边界 →（复杂项目）责任边界 / 投入阶段 / Execution Friction → 停止条件。
+核心：当前判断 → 动量 →（背调）→ 事实/推断/未知 → **当前关键未知** →（必要时）**Decision Barriers** → **现在可以主动澄清什么** → **最小有效推进 + 可直接提供资料 + 并行项** →（节点后）**Order Conversion Check** → 承诺边界 →（复杂项目）责任边界 / 投入阶段 / Execution Friction → 停止条件。
 
 样例：`references/golden-examples.md`。
 
@@ -153,6 +165,9 @@ RAW INPUT
 30. 不得为推进订单而跳过关键性能、安全、法规、付款、生产可行性或不可逆高成本变量。  
 31. 样品/验证已有明显正向证据时，不得默认无限开发；应检查 Next Customer Commitment。  
 32. 不得把“推进订单”简化成反复询问 `when will you order`。
+33. 不得按客户问题的顺序、重复次数或措辞强度代替 Decision Owner 与决策影响排序。
+34. 不得按样品次数判断 development / validation / PP 身份，也不得为赶订单错误升级样品阶段。
+35. 客户回复可按决策逻辑重组，但不得遗漏、篡改或淡化实质问题。
 
 ## 双模式
 
@@ -163,7 +178,7 @@ RAW INPUT
 ### Reply Gate
 
 默认终点是**判断清楚 → 给出下一步动作**，不是自动生成客户回复。  
-只有用户明确要求回复/邮件/WhatsApp/Alibaba message/怎么说时，才生成客户话术。见 `references/customer-reply.md`。
+只有用户明确要求回复/邮件/WhatsApp/Alibaba message/怎么说时，才生成客户话术。话术应最小充分、只回复必要增量；邮件正文后另给内部发送前资料检查。见 `references/customer-reply.md`。
 
 ## Company Context
 

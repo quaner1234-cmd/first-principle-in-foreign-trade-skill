@@ -23,6 +23,18 @@
 - 每条反馈明确归属：确认的进工艺单 / 方案的进打样 / 需要参考的找客户要
 - 有意义的样品反馈已收集，或一轮样品获得整体 / 原则认可后，运行 **Order Conversion Check**（见 `mode-order-conversion.md`）
 
+## Sample Purpose Check
+
+客户提出“再做一件 / 再改一轮样品”时，先判断下一件样的目的，不默认继续进入 development loop：
+
+- **Development sample / prototype**：核心方向、材料、结构、fit 或主要功能仍在探索
+- **Validation sample**：主要方向已明确，用于验证一个或数个已定义问题
+- **PP / production-intent sample**：整体方向已原则认可，关键规格接近冻结，剩余修改可枚举，主要用于验证量产版本并支持最终批准
+
+如果核心方向、关键 fit / performance 或主要材料仍可能大改，不能仅为赶订单把样品称为 PP sample。
+
+> **Sample identity follows sample purpose, not sample sequence.**
+
 ## 知识层
 
 需要时加载：`chapters/ch09-需求澄清.md`

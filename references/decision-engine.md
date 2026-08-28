@@ -1,6 +1,6 @@
 # Decision Engine（统一判断内核）
 
-所有场景都必须先运行同一个判断内核。对齐 Project Edition **1.4**。
+所有场景都必须先运行同一个判断内核。对齐 Project Edition **1.4.5**。
 
 ## 流程
 
@@ -29,28 +29,32 @@ RAW INPUT
 8. Current Key Uncertainty
    - 类型、能否形成 Reference、谁最终确认、是否 Hard Blocker
 ↓
-9. Progressive Specification
+9. 若当前存在明确的客户 / 内部下一层决定：识别 Decision Owner 与 Decision Barriers
+   - 回答“谁还不能决定、为什么”，并按决策影响排序；不要把所有 Unknown 都改写成 Barrier
+↓
+10. Progressive Specification
    - 若 Reference 足以支持当前推进 → Public Reference / Candidate Range / Working Assumption
    - 再判断何时必须获得 Verified Input / Final Specification
 ↓
-10. 对仍需客户决策的 B 类未知：只问 1–3 个高信息价值问题
+11. 对仍需客户决策的 B 类未知：只问 1–3 个高信息价值问题
 ↓
-11. Smallest Effective Advance + 并行推进项
+12. Smallest Effective Advance + 并行推进项
+    - Available Asset Before Ask：检查是否有现成、相关、低成本且不扩大承诺的资料 / 证据可在本轮直接提供
 ↓
-12. 承诺边界
+13. 承诺边界
     + Responsibility Boundary（内部：Can Do / Assist / Coordinate / Cannot Commit Yet）
     + Staged Commitment（投入是否与阶段和客户投入证据匹配）
     + Execution Friction / Transaction Node Check
 ↓
-13. Order Conversion Check（刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点时）
-    - 区分 Order Blocker 与 Remaining Detail
+14. Order Conversion Check（刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点时）
+    - 复用前述 Decision Barrier 排序，区分 Order Blocker 与 Remaining Detail
     - Next Commitment Check：当前合理的下一层客户承诺是什么？
     - 检查 Validation + Conversion 是否可并行
 ↓
-14. 停止条件（仅 Hard Stop）
+15. 停止条件（仅 Hard Stop）
 ↓
-15. Reply Gate：仅当用户明确要求时，生成压缩后的客户回复
-    （customer-reply.md：Natural Customer Communication）
+16. Reply Gate：仅当用户明确要求时，生成最小充分的客户回复
+    （customer-reply.md：Decision-first Reply + Natural Customer Communication + 发送前资料检查）
 ```
 
 ## 决策优先级（冲突时）
@@ -83,10 +87,10 @@ RAW INPUT
 
 `[客户原文]` `[当前项目文件]` `[对话上下文]` `[公司上下文]` `[供应商原话]` `[测试报告]` `[外部背调]` `[公开来源]` `[工具验证]`
 
-## 关键未知 vs Hard Blocker
+## Current Key Uncertainty vs Decision Barrier vs Hard Blocker
 
 输出优先写 **当前关键未知**，并标明是否 Hard Blocker。  
-不得把「客户尚未提供某信息」自动升级为阻塞并进入纯等待。
+有明确下一层决定时，再识别 **Decision Owner** 与 1–3 个按决策影响排序的 **Decision Barriers**。Decision Barrier 不一定是 Unknown；Current Key Uncertainty 也不一定阻止决定。不得把「客户尚未提供某信息」自动升级为阻塞并进入纯等待。
 
 ## Progressive Specification 检查
 
@@ -119,7 +123,7 @@ RAW INPUT
 
 刚完成有意义的报价 / 样品 / 测试 / 评审 / 技术收敛节点时，默认运行一次。详见 `clarity-engine.md`。
 
-依次问：距离 Bulk Order 还差什么；哪些是 Order Blocker；哪些是可后置 Remaining Detail；当前合理的 Next Customer Commitment；哪些最后验证可与正式核价 / 交期 / breakdown / PO 条件并行；时间窗口是否必须锁定。
+依次问：下一层决定是什么、Decision Owner 是谁；哪些 Decision Barriers 影响该决定；哪些是 Order Blocker、哪些是可后置 Remaining Detail；当前合理的 Next Customer Commitment；哪些最后验证可与正式核价 / 交期 / breakdown / PO 条件并行；时间窗口是否必须锁定。
 
 项目明显未到商业收敛阶段时，不要为完整性强行加入。
 

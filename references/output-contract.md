@@ -1,7 +1,7 @@
 # Output Contract（输出契约）
 
 Action Mode 必须可扫读。不要求每次机械展示全部标题；按复杂度压缩，但内部逻辑应保持。  
-对齐 Project Edition **1.4**。
+对齐 Project Edition **1.4.5**。
 
 ## 模板
 
@@ -19,6 +19,10 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 ## 外部背调事实
 
 （身份证据不足时必出；充分可「沿用」；格式见 auto-due-diligence.md）
+
+## 客户国家 / 地区（New Lead / Qualified Inquiry 必出）
+
+`客户国家 / 地区：X（Fact / Inference / Unknown）`。非 Fact 时简述依据或缺口；与目标销售市场分开。先做低成本公开核实，仍无法确认就写 Unknown。
 
 ## 事实 / 推断 / 未知
 
@@ -41,6 +45,12 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 
 规则：Unknown ≠ Blocker。解决路径与 Blocker 状态必须分开填写。
 
+## Decision Barriers（有明确下一层决定时）
+
+- 下一层决定与 Decision Owner
+- 1–3 个按决策影响排序的 Barrier
+- 不把所有 Unknown 改写成 Barrier，也不因客户问题顺序决定优先级
+
 ## 现在可以主动澄清什么
 
 - Web / 公开资料 / 成熟产品 Reference：…
@@ -54,6 +64,10 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 最多 3 项。标准：低成本 × 高信息增量 × 保持动量。  
 若 Reference 已够支持低风险下一步，优先用 Reference 推进。
 
+## 可直接提供的资料 / 证据
+
+仅列现成、相关、低成本且不扩大承诺边界的资产；没有或不确定时不虚构。邮件回复的完整检查见 `customer-reply.md`。
+
 ## 并行推进项
 
 短列表。
@@ -62,7 +76,8 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 
 当项目刚完成有意义的样品、测试、报价、评审或技术收敛节点时，必要时补充：
 
-- 距离 Bulk Order 还差什么；
+- 下一层决定与 Decision Owner；
+- 按决策影响排序的 Decision Barriers；
 - 哪些是真正 Order Blockers；
 - 哪些可以后置到 PP / production preparation；
 - 当前合理的 Next Customer Commitment；
@@ -116,6 +131,8 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 - 用措辞强度表达不确定性（as a reference / please confirm…），不默认免责声明堆叠  
 - Boundary by Design：流程与确认节点管理边界  
 - 商业条件：内部拆清，对外压缩  
+- Reply the Delta：不复述无异议的已知信息；结构服从决策逻辑
+- Reply Asset Check：邮件正文后另给业务员发送前资料检查
 
 ## 反模式（输出禁止）
 
@@ -131,3 +148,5 @@ Action Mode 必须可扫读。不要求每次机械展示全部标题；按复�
 - ❌ 样品已原则认可，却因可后置细节完全不谈数量 / 交期 / 正式报价  
 - ❌ 把 Order Conversion 做成催单（`When will you place the order?`）  
 - ❌ 为拿 PO 把安全 / 性能 / 交期 / 量产可行性错误降级  
+- ❌ 按客户问题顺序代替 Decision Barrier 排序；把下一件样机械视为 development sample
+- ❌ 客户回复逐条复述无异议背景，或虚构已有附件 / 公司资料

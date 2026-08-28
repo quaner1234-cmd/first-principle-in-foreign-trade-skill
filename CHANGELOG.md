@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.5
+
+- Aligned the public, modular Skill with Project Edition 1.4.5 (2026-08-25)
+- Added Decision Owner / Decision Barrier analysis and separated it from Current Key Uncertainty and Hard Blocker
+- Added Sample Purpose Check for development, validation, and PP / production-intent samples
+- Added Reply the Delta, Minimum Sufficient Reply, decision-first reply structure, and confirmation-without-restatement guidance
+- Added explicit buyer country / region output for New Lead and Qualified Inquiry, with Fact / Inference / Unknown status
+- Added Reply Asset Check and Available Asset Before Ask without assuming that assets exist
+- Separated confirmed Hard Constraints from provisional price, lead-time, and other commercial variables
+- Expanded anti-hallucination rules from 32 to 35
+- Kept company-specific context out of the public repository; all company facts remain local
+- Changed the repository license from Apache-2.0 to MIT for this and future versions; previously published versions remain available under their original license terms
+
 ## 1.4
 
 - Aligned Skill content with ChatGPT Project Edition 1.4 (2026-08-13)

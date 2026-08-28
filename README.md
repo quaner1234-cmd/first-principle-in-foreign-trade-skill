@@ -15,7 +15,7 @@ You make the final judgment.
 Skill 内部名称：`trade-judgment`  
 仓库名称：`first-principle-in-foreign-trade-skill`
 
-从 `1.4` 起，Skill 内容对齐 ChatGPT Project Edition 1.4（Order Conversion / 大货推进、Clarity → Commitment、Commercial Commitment Ladder、Validation + Conversion，以及 1.3.1 的 Progressive Specification、责任边界内严外松、Reply Gate、Natural Customer Communication 等）。仓库另含 Runtime Harness：原 Skill 作为领域决策 Policy，Python Runtime 负责状态、Schema、工具权限、审批、恢复、审计与回归测试。完整说明见 [`RUNTIME.md`](RUNTIME.md)。
+当前 Skill 对齐 ChatGPT Project Edition **1.4.5（2026-08-25）**。除 1.4 的 Order Conversion / 大货推进外，新增 Decision Barrier 排序、Sample Purpose Check、Reply the Delta / Minimum Sufficient Reply、询盘国家 / 地区输出、发送前资料检查、Hard Constraint 与暂估商业变量分离，以及 Available Asset Before Ask。仓库另含 Runtime Harness：原 Skill 作为领域决策 Policy，Python Runtime 负责状态、Schema、工具权限、审批、恢复、审计与回归测试。完整说明见 [`RUNTIME.md`](RUNTIME.md)。
 
 ---
 
@@ -23,12 +23,16 @@ Skill 内部名称：`trade-judgment`
 
 - Clarity before closure：把不确定转化为可行动清晰度（不是尽快关单）
 - Clarity → Commitment：产品越清晰，越要检查下一层合理的客户承诺
+- Current Key Uncertainty ≠ Decision Barrier：先识别谁还不能做下一层决定、为什么，再按决策影响排序
 - Progressive Specification：Unknown → Reference → Working Assumption → Verified Input → Final Spec
 - Reference ≠ Specification；Tool-before-Question；Decision Ownership ≠ Information Generation
 - 项目阶段自动识别 + 对话动量 + 未知解决路径 + 独立 Blocker 状态
 - Order Conversion：样品/测试/报价节点后区分 Order Blocker 与 Remaining Detail；Validation + Conversion 可并行
 - 责任边界（Can Do / Assist / Coordinate）内部严谨、对外自然（不默认免责声明堆叠）
 - Reply Gate：仅在用户明确要求时生成客户话术
+- Reply the Delta：覆盖必要事项，不复述无异议背景；邮件正文后提供内部发送前资料检查
+- Sample Purpose Check：按探索 / 验证 / PP 目的判断下一件样，不按样品次数判断
+- Hard Constraint ≠ Provisional Commercial Variable；Available Asset Before Ask
 - Execution Friction：减少不必要交易节点，但不提前承诺未知
 - 客户身份证据不足时的公开背调（只建事实，不打分）
 - 询盘澄清、报价、技术包、样品、跟进、供应商、谈判、升级、复盘、大货推进
@@ -53,6 +57,8 @@ Fact / Inference / Unknown
 Tool-before-Question → Progressive Specification
 ↓
 Current key uncertainty (Hard Blocker?)
+↓
+Decision owner + decision barriers (when a next decision exists)
 ↓
 Smallest effective advance + parallel tracks
 ↓
@@ -247,11 +253,11 @@ tests/                        # runtime and policy invariant regression tests
 
 ## License
 
-本仓库采用 [Apache License 2.0](LICENSE)。
+本仓库采用 [MIT License](LICENSE)。
 
 Copyright 2026 Alex
 
-该许可仅覆盖本仓库内的 Skill 文件、规则与脱敏示例。  
+MIT 许可仅覆盖本仓库内的 Skill 文件、代码、规则与脱敏示例。
 《让客户敢下单》书籍全文及未公开书稿**不在**本许可范围内，版权仍由权利人保留。
 
 ---
