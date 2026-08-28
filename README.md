@@ -15,7 +15,9 @@ You make the final judgment.
 Skill 内部名称：`trade-judgment`  
 仓库名称：`first-principle-in-foreign-trade-skill`
 
-当前 Skill 对齐 ChatGPT Project Edition **1.4.5（2026-08-25）**。除 1.4 的 Order Conversion / 大货推进外，新增 Decision Barrier 排序、Sample Purpose Check、Reply the Delta / Minimum Sufficient Reply、询盘国家 / 地区输出、发送前资料检查、Hard Constraint 与暂估商业变量分离，以及 Available Asset Before Ask。仓库另含 Runtime Harness：原 Skill 作为领域决策 Policy，Python Runtime 负责状态、Schema、工具权限、审批、恢复、审计与回归测试。完整说明见 [`RUNTIME.md`](RUNTIME.md)。
+当前 Skill 对齐 ChatGPT Project Edition **1.4.6（2026-08-28）**。1.4.6 不新增 Mode 或 Gate，重点补充 **Product Reality Check / Domain Expert Lens** 和 **Wide In → Narrow Out**：复杂产品/技术任务先检查客户原始 frame 是否合理，必要时用成熟行业实践做 targeted Reality Benchmark；研究可以宽，但给客户、同事、供应商或管理层的输出必须压缩成当前决定真正需要的推荐、依据和少量确认问题。此前 1.4.5 的 Decision Barrier、Sample Purpose、Reply the Delta、询盘国家/地区输出、Hard Constraint 与暂估变量分离等规则继续保留。
+
+仓库另含 Runtime Harness：原 Skill 作为领域决策 Policy，Python Runtime 负责状态、Schema、工具权限、审批、恢复、审计与回归测试。1.4.6 未新增机器状态或审批节点，因此 Runtime schema 保持不变。完整说明见 [`RUNTIME.md`](RUNTIME.md)。
 
 ---
 
@@ -24,6 +26,9 @@ Skill 内部名称：`trade-judgment`
 - Clarity before closure：把不确定转化为可行动清晰度（不是尽快关单）
 - Clarity → Commitment：产品越清晰，越要检查下一层合理的客户承诺
 - Current Key Uncertainty ≠ Decision Barrier：先识别谁还不能做下一层决定、为什么，再按决策影响排序
+- Product Reality Check：必要时先挑战客户原始产品 / 技术 frame，而不是直接照单执行
+- Targeted Reality Benchmark：成熟同类产品、供应商技术资料、标准 / 测试方法可形成 Reference / Candidate Recommendation，但不能替代当前项目 Verified Input
+- Wide In → Narrow Out：研究可以宽；给客户和现实责任人的 handoff 默认压缩成一个推荐 + 1–3 条依据 + 1–3 个高价值问题
 - Progressive Specification：Unknown → Reference → Working Assumption → Verified Input → Final Spec
 - Reference ≠ Specification；Tool-before-Question；Decision Ownership ≠ Information Generation
 - 项目阶段自动识别 + 对话动量 + 未知解决路径 + 独立 Blocker 状态
@@ -54,13 +59,17 @@ Buyer identity evidence / Company Context
 ↓
 Fact / Inference / Unknown
 ↓
+Current key uncertainty + decision owner / decision barriers
+↓
+Product Reality Check when the product/technical frame itself may affect the decision
+↓
+Targeted Reality Benchmark (only when mature practice could materially change the solution)
+↓
 Tool-before-Question → Progressive Specification
 ↓
-Current key uncertainty (Hard Blocker?)
-↓
-Decision owner + decision barriers (when a next decision exists)
-↓
 Smallest effective advance + parallel tracks
+↓
+Wide In → Narrow Out handoff to customer / internal owner / supplier / lab / management
 ↓
 Commitment + responsibility + execution-friction checks
 ↓
@@ -70,7 +79,7 @@ Customer reply only if requested (Reply Gate)
 ```
 
 Skill 会自动判断项目阶段，**不要**让用户先选「新询盘还是老询盘」。  
-**Unknown ≠ Blocker.** **Reference ≠ Specification.** 内部严谨，对外自然。
+**Unknown ≠ Blocker.** **Reference ≠ Specification.** **Wide In → Narrow Out.** 内部严谨，对外自然。
 
 ---
 
@@ -97,13 +106,16 @@ Facts:
 
 Current key uncertainty:
 The fabric specification affects reliable costing.
-Resolution path: customer clarification. Blocker status: soft blocking, not Hard Stop.
+Resolution path: customer clarification + material reference. Blocker status: soft blocking, not Hard Stop.
+
+Product reality check (only if needed):
+If the reference construction itself appears contradictory or over-specified, first compare mature product architecture and supplier technical guidance, then form a preferred candidate.
 
 Next action:
-Ask only the 2 variables that will materially change price.
+Ask only the 1–3 variables that will materially change price or construction.
 
-Reality verification:
-Customer + material supplier
+Internal / supplier handoff:
+Preferred direction + 1–3 reasons + 1–3 questions that change the next step.
 
 Do not promise yet:
 Final FOB price and delivery time
@@ -212,6 +224,8 @@ company-context.local.md
 - 不虚构公司能力、价格、库存、认证、交期、客户背景、供应商能力、法规
 - 不用精确百分比表达成交概率
 - 模型技术解释默认是 Candidate Explanation，必须经过现实验证
+- 公开行业 Benchmark / 成熟产品 / 供应商技术资料只能形成 Reference / Candidate Recommendation，不能自动变成当前项目规格或我方能力
+- Wide In → Narrow Out 只能压缩表达，不能删掉会改变决定的关键风险或验证要求
 
 ---
 
@@ -264,4 +278,4 @@ MIT 许可仅覆盖本仓库内的 Skill 文件、代码、规则与脱敏示例
 
 ## Disclaimer
 
-本工具协助降低信息处理的不确定性，不替代业务员、管理层或法务的最终责任。对外报价、交期、认证与合规承诺，必须以你们公司核实后的事实为准。
+本工具协助降低信息处理的不确定性，不替代业务员、管理层、技术人员或法务的最终责任。对外报价、交期、认证、产品性能与合规承诺，必须以你们公司核实后的事实为准。
